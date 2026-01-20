@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ const features = [
   "Offline use after activation",
 ];
 
-export default function BuyPage() {
+function BuyPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const canceled = searchParams.get("canceled");
@@ -144,5 +144,13 @@ export default function BuyPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BuyPage() {
+  return (
+    <Suspense fallback={<div className="py-24 text-center">Loading...</div>}>
+      <BuyPageContent />
+    </Suspense>
   );
 }
