@@ -74,11 +74,11 @@ export default function Hero() {
             Custom crosshair overlays, display adjustments for dark and bright maps, and Discord volume control. All in one app.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/buy" className="btn-primary text-lg px-8 py-4">
-              Get ReSight
+            <Link href="/register" className="btn-primary text-lg px-8 py-4">
+              Get Started
             </Link>
-            <Link href="/#features" className="btn-secondary text-lg px-8 py-4">
-              Learn More
+            <Link href="/buy" className="btn-secondary text-lg px-8 py-4">
+              View Pricing
             </Link>
           </div>
         </div>

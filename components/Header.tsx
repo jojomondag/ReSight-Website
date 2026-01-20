@@ -97,8 +97,8 @@ export default function Header() {
                 >
                   Login
                 </Link>
-                <Link href="/buy" className="btn-primary text-sm">
-                  Buy Now
+                <Link href="/register" className="btn-primary text-sm">
+                  Get Started
                 </Link>
               </>
             )}

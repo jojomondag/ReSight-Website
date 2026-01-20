@@ -73,6 +73,42 @@ export default function DashboardPage() {
           </p>
         </div>
 
+        {/* Download Section - shown prominently when user has licenses */}
+        {licenses.length > 0 && (
+          <div className="card mb-8 border-accent">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h2 className="text-xl font-semibold text-text-primary mb-1">
+                  Ready to Download
+                </h2>
+                <p className="text-text-secondary">
+                  Get the latest version of ReSight and use your license key to activate.
+                </p>
+              </div>
+              <Link
+                href="https://github.com/jojomondag/ReSight/releases"
+                className="btn-primary inline-flex items-center gap-2 whitespace-nowrap"
+                target="_blank"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                Download ReSight
+              </Link>
+            </div>
+          </div>
+        )}
+
         <div className="card mb-8">
           <h2 className="text-xl font-semibold text-text-primary mb-4">
             Account
@@ -216,28 +252,6 @@ export default function DashboardPage() {
           )}
         </div>
 
-        <div className="mt-8 text-center">
-          <Link
-            href="https://github.com/jojomondag/ReSight/releases"
-            className="btn-secondary inline-flex items-center gap-2"
-            target="_blank"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              />
-            </svg>
-            Download ReSight
-          </Link>
-        </div>
       </div>
     </div>
   );
