@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #1a1e1a;
+  --bg-secondary: #252a25;
+  --bg-tertiary: #2a302a;
+  --accent: #9CAB84;
+  --accent-light: #C5D89D;
+  --accent-dark: #89986D;
+  --text-primary: #F6F0D7;
+  --text-secondary: #89986D;
+  --error: #C4957A;
+  --border: #3a3f3a;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-bg-primary font-semibold px-6 py-3 rounded-lg hover:bg-accent-light transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-tertiary text-text-primary border border-border px-6 py-3 rounded-lg hover:bg-border transition-colors;
+  }
+
+  .input-field {
+    @apply w-full bg-bg-secondary border border-border rounded-lg px-4 py-3 text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent transition-colors;
+  }
+
+  .card {
+    @apply bg-bg-secondary border border-border rounded-xl p-6;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
