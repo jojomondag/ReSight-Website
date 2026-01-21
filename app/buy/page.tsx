@@ -140,6 +140,13 @@ function BuyPageContent() {
               </Link>
             </p>
           </div>
+
+          <p className="text-text-secondary text-lg text-center mt-6 max-w-2xl mx-auto">
+            ReSight is designed to enhance your gaming experience through improved visual clarity and convenience features.
+            We believe in fair play—this tool is not intended to provide unfair advantages.
+            Please use responsibly and in accordance with each game&apos;s terms of service.
+            We are not liable for any consequences resulting from use.
+          </p>
         </div>
       </div>
     </div>
