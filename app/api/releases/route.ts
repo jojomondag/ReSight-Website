@@ -17,20 +17,24 @@ interface GitHubRelease {
 
 export async function GET() {
   try {
-    const hasToken = !!process.env.GITHUB_TOKEN;
-    console.log("GITHUB_TOKEN present:", hasToken);
+    const githubToken = process.env.GITHUB_TOKEN;
+
+    if (!githubToken) {
+      console.error("GITHUB_TOKEN not configured");
+      return NextResponse.json(
+        { error: "Download service not configured", debug: "missing_token" },
+        { status: 500 }
+      );
+    }
 
     const response = await fetch(
       "https://api.github.com/repos/jojomondag/ReSight/releases/latest",
       {
         headers: {
           Accept: "application/vnd.github.v3+json",
-          // Add GitHub token if you have one for higher rate limits
-          ...(process.env.GITHUB_TOKEN && {
-            Authorization: `token ${process.env.GITHUB_TOKEN}`,
-          }),
+          Authorization: `token ${githubToken}`,
         },
-        next: { revalidate: 300 }, // Cache for 5 minutes
+        cache: "no-store", // Don't cache to ensure fresh data
       }
     );
 
