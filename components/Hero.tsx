@@ -62,32 +62,52 @@ export default function Hero() {
   }, [lightboxIndex, goToPrevious, goToNext]);
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary opacity-50" />
+    <section
+      className="relative overflow-hidden"
+      aria-labelledby="hero-heading"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary opacity-50" aria-hidden="true" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
+        <header className="text-center">
+          {/* Speakable content for voice search */}
+          <h1
+            id="hero-heading"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6"
+            data-speakable="true"
+          >
             Aim Better.
             <span className="block text-accent">See More.</span>
           </h1>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-10">
+          <p
+            className="text-xl text-text-secondary max-w-2xl mx-auto mb-10"
+            data-speakable="true"
+          >
             Custom crosshair overlays, display adjustments for dark and bright maps, and Discord volume control. All in one app.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/register" className="btn-primary text-lg px-8 py-4">
+          <nav className="flex flex-col sm:flex-row gap-4 justify-center" aria-label="Primary actions">
+            <Link
+              href="/register"
+              className="btn-primary text-lg px-8 py-4"
+              aria-label="Get started with ReSight - Create your account"
+            >
               Get Started
             </Link>
-            <Link href="/buy" className="btn-secondary text-lg px-8 py-4">
+            <Link
+              href="/buy"
+              className="btn-secondary text-lg px-8 py-4"
+              aria-label="View ReSight pricing - $5 one-time purchase"
+            >
               View Pricing
             </Link>
-          </div>
-        </div>
+          </nav>
+        </header>
 
         {/* Before/After Comparison */}
         <div className="mt-16 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="sr-only">ReSight in action - Before and after comparison</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
             {games.map((game) => (
-              <div key={game.name} className="space-y-3">
+              <article key={game.name} className="space-y-3" role="listitem">
                 <div className="text-center mb-4">
                   <span className="px-4 py-2 rounded-lg text-sm font-medium bg-bg-tertiary text-text-primary">
                     {game.name}
@@ -96,13 +116,15 @@ export default function Hero() {
                 <button
                   onClick={() => openLightbox(game.images.after)}
                   className="relative rounded-lg overflow-hidden border-2 border-accent cursor-pointer hover:brightness-110 transition-all w-full"
+                  aria-label={`View ${game.name} with ReSight enhancement - click to enlarge`}
                 >
                   <Image
                     src={game.images.after}
-                    alt={`${game.name} with ReSight`}
+                    alt={`${game.name} gameplay with ReSight crosshair overlay and display adjustments applied`}
                     width={800}
                     height={450}
                     className="w-full h-auto"
+                    priority
                   />
                   <span className="absolute top-3 left-3 bg-accent/90 text-bg-primary text-xs px-2 py-1 rounded font-medium">
                     With ReSight
@@ -111,10 +133,11 @@ export default function Hero() {
                 <button
                   onClick={() => openLightbox(game.images.before)}
                   className="relative rounded-lg overflow-hidden border-2 border-border cursor-pointer hover:brightness-110 transition-all w-full"
+                  aria-label={`View ${game.name} without ReSight - click to enlarge`}
                 >
                   <Image
                     src={game.images.before}
-                    alt={`${game.name} before`}
+                    alt={`${game.name} gameplay without ReSight - showing difficulty seeing in dark areas`}
                     width={800}
                     height={450}
                     className="w-full h-auto"
@@ -123,7 +146,7 @@ export default function Hero() {
                     Before
                   </span>
                 </button>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -134,11 +157,15 @@ export default function Hero() {
         <div
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer animate-fade-in"
           onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
         >
           {/* Close button */}
           <button
             className="absolute top-4 right-4 text-white/80 hover:text-white text-4xl font-light transition-colors z-10"
             onClick={closeLightbox}
+            aria-label="Close lightbox"
           >
             ×
           </button>
@@ -157,6 +184,7 @@ export default function Hero() {
               <button
                 className="absolute left-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors p-2 hover:bg-white/10 rounded-full"
                 onClick={goToPrevious}
+                aria-label="Previous image"
               >
                 ‹
               </button>
@@ -164,6 +192,7 @@ export default function Hero() {
               <button
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors p-2 hover:bg-white/10 rounded-full"
                 onClick={goToNext}
+                aria-label="Next image"
               >
                 ›
               </button>

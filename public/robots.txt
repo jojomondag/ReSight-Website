@@ -1,0 +1,29 @@
+# ReSight Website Robots.txt
+# https://resight.gg
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Block administrative and API routes
+Disallow: /api/
+Disallow: /dashboard/
+
+# Allow specific AI crawlers (for GEO optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://resight.gg/sitemap.xml

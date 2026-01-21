@@ -1,5 +1,6 @@
 const features = [
   {
+    id: "crosshair-overlay",
     title: "Crosshair Overlay",
     description:
       "Custom crosshairs that work in any game. Pixel-perfect precision with colors, sizes, and styles you control.",
@@ -9,6 +10,7 @@ const features = [
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -20,6 +22,7 @@ const features = [
     ),
   },
   {
+    id: "visual-clarity",
     title: "Visual Clarity",
     description:
       "Dark maps too dark? Bright skies washing out enemies? Adjust brightness, contrast & gamma instantly with hotkeys.",
@@ -29,6 +32,7 @@ const features = [
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -40,6 +44,7 @@ const features = [
     ),
   },
   {
+    id: "discord-volume",
     title: "Discord Volume Control",
     description:
       "Lower voice chat volume with a hotkey during clutch moments. Focus when it matters most.",
@@ -49,6 +54,7 @@ const features = [
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -60,6 +66,7 @@ const features = [
     ),
   },
   {
+    id: "game-profiles",
     title: "Game Profiles",
     description:
       "Auto-apply your settings when games launch. Different presets for different maps or lighting conditions.",
@@ -69,6 +76,7 @@ const features = [
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -83,25 +91,37 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 bg-bg-secondary">
+    <section
+      id="features"
+      className="py-24 bg-bg-secondary"
+      aria-labelledby="features-heading"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+        <header className="text-center mb-16">
+          <h2
+            id="features-heading"
+            className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"
+          >
             Features
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
             Everything runs in real-time. No alt-tabbing. No restarting.
           </p>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
+          {features.map((feature) => (
+            <article
+              key={feature.id}
+              id={feature.id}
               className="card hover:border-accent transition-colors"
+              role="listitem"
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center">
+                <div
+                  className="flex-shrink-0 w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center"
+                  aria-hidden="true"
+                >
                   {feature.icon}
                 </div>
                 <div>
@@ -111,7 +131,7 @@ export default function Features() {
                   <p className="text-text-secondary">{feature.description}</p>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
