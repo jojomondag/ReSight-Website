@@ -47,13 +47,14 @@ export async function GET() {
       name: release.name,
       publishedAt: release.published_at,
       changelog: release.body,
-      downloadUrl: installer?.browser_download_url || null,
+      // Use our proxy endpoint instead of direct GitHub URL (private repo)
+      downloadUrl: installer ? "/api/download" : null,
       fileName: installer?.name || null,
       fileSize: installer?.size || null,
       downloadCount: installer?.download_count || 0,
       assets: release.assets.map((asset) => ({
         name: asset.name,
-        url: asset.browser_download_url,
+        url: "/api/download", // All downloads go through proxy
         size: asset.size,
       })),
     });
