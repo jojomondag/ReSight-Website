@@ -95,7 +95,7 @@ export default function Hero() {
                 </div>
                 <button
                   onClick={() => openLightbox(game.images.after)}
-                  className="relative rounded-lg overflow-hidden border border-accent cursor-pointer hover:brightness-110 transition-all w-full"
+                  className="relative rounded-lg overflow-hidden border-2 border-accent cursor-pointer hover:brightness-110 transition-all w-full"
                 >
                   <Image
                     src={game.images.after}
@@ -110,7 +110,7 @@ export default function Hero() {
                 </button>
                 <button
                   onClick={() => openLightbox(game.images.before)}
-                  className="relative rounded-lg overflow-hidden border border-border cursor-pointer hover:brightness-110 transition-all w-full"
+                  className="relative rounded-lg overflow-hidden border-2 border-border cursor-pointer hover:brightness-110 transition-all w-full"
                 >
                   <Image
                     src={game.images.before}
