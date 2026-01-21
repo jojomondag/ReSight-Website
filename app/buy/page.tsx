@@ -9,7 +9,6 @@ const features = [
   "Advanced display settings",
   "Discord volume control",
   "Unlimited gaming profiles",
-  "Lifetime updates",
   "Priority support",
   "One machine activation",
   "Offline use after activation",

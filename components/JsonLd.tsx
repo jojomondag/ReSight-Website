@@ -98,7 +98,6 @@ export function SoftwareJsonLd() {
             "Discord volume control with hotkeys",
             "Game-specific profiles",
             "Works with any game",
-            "Lifetime updates",
         ],
         screenshot: "https://resight.gg/screenshots/hunt-dark-processed.png",
         softwareVersion: "1.0",
