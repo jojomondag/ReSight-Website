@@ -29,7 +29,7 @@ export default function Pricing() {
                 ReSight License
               </h3>
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-5xl font-bold text-accent">$19</span>
+                <span className="text-5xl font-bold text-accent">$5</span>
                 <span className="text-text-secondary">one-time</span>
               </div>
             </div>
