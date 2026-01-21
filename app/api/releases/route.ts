@@ -17,6 +17,9 @@ interface GitHubRelease {
 
 export async function GET() {
   try {
+    const hasToken = !!process.env.GITHUB_TOKEN;
+    console.log("GITHUB_TOKEN present:", hasToken);
+
     const response = await fetch(
       "https://api.github.com/repos/jojomondag/ReSight/releases/latest",
       {
@@ -32,6 +35,8 @@ export async function GET() {
     );
 
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`GitHub API error: ${response.status}`, errorText);
       throw new Error(`GitHub API error: ${response.status}`);
     }
 
