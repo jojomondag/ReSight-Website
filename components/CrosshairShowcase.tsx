@@ -1,26 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
-type MediaType = "video" | "image";
-
-const mainDemo = {
-  type: "video" as MediaType,
-  src: undefined as string | undefined,
-};
-
-function MediaPlaceholder({ type }: { type: MediaType }) {
-  const text = type === "video" ? "Placeholder" : "Image placeholder";
-  return (
-    <div
-      className="aspect-video w-full rounded-lg bg-bg-tertiary border-2 border-dashed border-border flex items-center justify-center"
-      aria-hidden="true"
-    >
-      <span className="text-text-secondary text-base">{text}</span>
-    </div>
-  );
-}
-
 const placeholderCards: {
   id: string;
   title: string;
@@ -85,48 +64,6 @@ function PlaceholderCard({
   );
 }
 
-function MainDemoBlock() {
-  const { type, src } = mainDemo;
-  if (!src) {
-    return (
-      <div className="space-y-3">
-        <span className="inline-block text-accent font-medium text-base sm:text-lg">
-          Watch it work
-        </span>
-        <MediaPlaceholder type={type} />
-      </div>
-    );
-  }
-  if (type === "video") {
-    return (
-      <div className="space-y-3">
-        <span className="inline-block text-accent font-medium text-base sm:text-lg">
-          Watch it work
-        </span>
-        <div className="aspect-video w-full rounded-lg overflow-hidden border border-border">
-          <video src={src} controls className="w-full h-full object-contain" />
-        </div>
-      </div>
-    );
-  }
-  return (
-    <div className="space-y-3">
-      <span className="inline-block text-accent font-medium text-base sm:text-lg">
-        Watch it work
-      </span>
-      <div className="aspect-video w-full relative rounded-lg overflow-hidden border border-border">
-        <Image
-          src={src}
-          alt="ReSight crosshair overlay demo"
-          fill
-          className="object-contain"
-          sizes="(max-width: 1280px) 100vw, 1280px"
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function CrosshairShowcase() {
   return (
     <section
@@ -146,10 +83,6 @@ export default function CrosshairShowcase() {
             Use any image. Any game. Pixel-perfect.
           </p>
         </header>
-
-        <div className="max-w-5xl mx-auto mb-20 lg:mb-24 xl:mb-28">
-          <MainDemoBlock />
-        </div>
 
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12 max-w-5xl mx-auto"
