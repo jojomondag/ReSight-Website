@@ -47,30 +47,30 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="py-24 bg-bg-secondary"
+      className="py-20 sm:py-24 lg:py-32 xl:py-36 bg-bg-secondary"
       aria-labelledby="faq-heading"
     >
       {/* FAQ Schema for Rich Snippets */}
       <FAQJsonLd faqs={faqs} />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 xl:mb-24">
           <h2
             id="faq-heading"
-            className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-4 lg:mb-5"
           >
             Frequently Asked Questions
           </h2>
-          <p className="text-text-secondary">
+          <p className="text-text-secondary text-xl sm:text-2xl">
             Got questions? We&apos;ve got answers. Find what you need below.
           </p>
         </div>
 
-        <div className="space-y-4" role="list">
+        <div className="space-y-5 sm:space-y-6 lg:space-y-8" role="list">
           {faqs.map((faq, index) => (
             <article
               key={index}
-              className="card"
+              className="card p-6 sm:p-8 lg:p-10"
               role="listitem"
               itemScope
               itemType="https://schema.org/Question"
@@ -82,13 +82,13 @@ export default function FAQ() {
                 aria-controls={`faq-answer-${index}`}
               >
                 <span
-                  className="text-lg font-medium text-text-primary"
+                  className="text-xl sm:text-2xl font-medium text-text-primary"
                   itemProp="name"
                 >
                   {faq.question}
                 </span>
                 <svg
-                  className={`w-5 h-5 text-text-secondary transition-transform ${openIndex === index ? "rotate-180" : ""
+                  className={`w-6 h-6 text-text-secondary flex-shrink-0 transition-transform ${openIndex === index ? "rotate-180" : ""
                     }`}
                   fill="none"
                   stroke="currentColor"
@@ -105,14 +105,14 @@ export default function FAQ() {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96 mt-4" : "max-h-0"
+                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[28rem] mt-4" : "max-h-0"
                   }`}
                 itemScope
                 itemType="https://schema.org/Answer"
                 itemProp="acceptedAnswer"
               >
                 <p
-                  className="text-text-secondary"
+                  className="text-text-secondary text-base sm:text-lg"
                   itemProp="text"
                 >
                   {faq.answer}

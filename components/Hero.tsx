@@ -67,9 +67,9 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary opacity-50" aria-hidden="true" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
-        {/* Hero Grid: Text Left, Video Right – larger, more viewport */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center min-h-[65vh] sm:min-h-[70vh] lg:min-h-[72vh]">
+      <div className="relative max-w-7xl xl:max-w-[1600px] 2xl:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-28 2xl:px-40 min-h-[calc(100vh-80px)] flex flex-col justify-center py-8 sm:py-12 xl:py-36 2xl:py-52">
+        {/* Hero Grid: Text Left, Video Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-40 2xl:gap-60 items-center flex-1">
           {/* Left Side: Text Content */}
           <header className="text-center lg:text-left transition-all duration-200">
             {/* Speakable content for voice search */}
@@ -138,8 +138,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Before/After Comparison – unchanged, excluded from "bigger" hero */}
-        <div className="mt-16 max-w-5xl mx-auto">
+        {/* Before/After Comparison - below the fold */}
+        <div className="mt-16 sm:mt-20 max-w-5xl mx-auto">
           <h2 className="sr-only">ReSight in action - Before and after comparison</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
             {games.map((game) => (

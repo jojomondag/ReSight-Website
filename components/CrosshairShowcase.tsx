@@ -16,7 +16,7 @@ function MediaPlaceholder({ type }: { type: MediaType }) {
       className="aspect-video w-full rounded-lg bg-bg-tertiary border-2 border-dashed border-border flex items-center justify-center"
       aria-hidden="true"
     >
-      <span className="text-text-secondary text-sm">{text}</span>
+      <span className="text-text-secondary text-base">{text}</span>
     </div>
   );
 }
@@ -58,7 +58,7 @@ function SquarePlaceholder() {
       className="aspect-square w-full rounded-lg bg-bg-tertiary border border-border flex items-center justify-center"
       aria-hidden="true"
     >
-      <span className="text-text-secondary text-sm">Placeholder</span>
+      <span className="text-text-secondary text-base">Placeholder</span>
     </div>
   );
 }
@@ -71,12 +71,12 @@ function PlaceholderCard({
   description: [string, string];
 }) {
   return (
-    <article className="card flex flex-col">
+    <article className="card flex flex-col p-6 sm:p-8">
       <div className="mb-4 flex-shrink-0">
         <SquarePlaceholder />
       </div>
-      <h3 className="text-lg font-bold text-text-primary mb-2">{title}</h3>
-      <p className="text-text-secondary text-sm leading-relaxed">
+      <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-2">{title}</h3>
+      <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
         {description[0]}
         <br />
         {description[1]}
@@ -90,7 +90,7 @@ function MainDemoBlock() {
   if (!src) {
     return (
       <div className="space-y-3">
-        <span className="inline-block text-accent font-medium text-sm">
+        <span className="inline-block text-accent font-medium text-base sm:text-lg">
           Watch it work
         </span>
         <MediaPlaceholder type={type} />
@@ -100,7 +100,7 @@ function MainDemoBlock() {
   if (type === "video") {
     return (
       <div className="space-y-3">
-        <span className="inline-block text-accent font-medium text-sm">
+        <span className="inline-block text-accent font-medium text-base sm:text-lg">
           Watch it work
         </span>
         <div className="aspect-video w-full rounded-lg overflow-hidden border border-border">
@@ -111,7 +111,7 @@ function MainDemoBlock() {
   }
   return (
     <div className="space-y-3">
-      <span className="inline-block text-accent font-medium text-sm">
+      <span className="inline-block text-accent font-medium text-base sm:text-lg">
         Watch it work
       </span>
       <div className="aspect-video w-full relative rounded-lg overflow-hidden border border-border">
@@ -131,28 +131,28 @@ export default function CrosshairShowcase() {
   return (
     <section
       id="crosshair-showcase"
-      className="pt-24 pb-12 bg-bg-primary"
+      className="pt-20 sm:pt-24 lg:pt-28 xl:pt-32 pb-16 sm:pb-20 lg:pb-24 xl:pb-28 bg-bg-primary"
       aria-labelledby="crosshair-showcase-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+        <header className="text-center mb-12 sm:mb-16 lg:mb-20 xl:mb-24">
           <h2
             id="crosshair-showcase-heading"
-            className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-4 lg:mb-5"
           >
             Crosshair Overlay
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-xl sm:text-2xl max-w-2xl mx-auto">
             Use any image. Any game. Pixel-perfect.
           </p>
         </header>
 
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="max-w-5xl mx-auto mb-20 lg:mb-24 xl:mb-28">
           <MainDemoBlock />
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12 max-w-5xl mx-auto"
           role="list"
         >
           {placeholderCards.map((card) => (

@@ -6,7 +6,7 @@ const features = [
       "Dark maps too dark? Bright skies washing out enemies? Adjust brightness, contrast & gamma instantly with hotkeys.",
     icon: (
       <svg
-        className="w-8 h-8"
+        className="w-9 h-9 lg:w-10 lg:h-10"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ const features = [
       "Lower voice chat volume with a hotkey during clutch moments. Focus when it matters most.",
     icon: (
       <svg
-        className="w-8 h-8"
+        className="w-9 h-9 lg:w-10 lg:h-10"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ const features = [
       "Auto-apply your settings when games launch. Different presets for different maps or lighting conditions.",
     icon: (
       <svg
-        className="w-8 h-8"
+        className="w-9 h-9 lg:w-10 lg:h-10"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -71,42 +71,42 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="pt-12 pb-24 bg-bg-secondary"
+      className="pt-20 sm:pt-24 lg:pt-28 xl:pt-32 pb-24 lg:pb-32 xl:pb-36 bg-bg-secondary"
       aria-labelledby="features-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+        <header className="text-center mb-12 sm:mb-16 lg:mb-20 xl:mb-24">
           <h2
             id="features-heading"
-            className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-4 lg:mb-5"
           >
             Features
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-xl sm:text-2xl max-w-2xl mx-auto">
             Everything runs in real-time. No alt-tabbing. No restarting.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 xl:gap-16" role="list">
           {features.map((feature) => (
             <article
               key={feature.id}
               id={feature.id}
-              className="card hover:border-accent transition-colors"
+              className="card hover:border-accent transition-colors p-6 sm:p-8 lg:p-10"
               role="listitem"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 lg:gap-5">
                 <div
-                  className="flex-shrink-0 w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center"
+                  className="flex-shrink-0 w-14 h-14 lg:w-16 lg:h-16 bg-accent/10 text-accent rounded-lg flex items-center justify-center"
                   aria-hidden="true"
                 >
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-text-primary mb-2">
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-text-primary mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-text-secondary">{feature.description}</p>
+                  <p className="text-text-secondary text-lg lg:text-xl">{feature.description}</p>
                 </div>
               </div>
             </article>
