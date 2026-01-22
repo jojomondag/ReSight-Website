@@ -1,27 +1,5 @@
 const features = [
   {
-    id: "crosshair-overlay",
-    title: "Crosshair Overlay",
-    description:
-      "Custom crosshairs that work in any game. Pixel-perfect precision with colors, sizes, and styles you control.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 4v1m0 14v1m8-8h-1M5 12H4m13.364-5.364l-.707.707M7.05 16.95l-.707.707m10.607 0l-.707-.707M7.05 7.05l-.707-.707"
-        />
-      </svg>
-    ),
-  },
-  {
     id: "visual-clarity",
     title: "Visual Clarity",
     description:
@@ -93,11 +71,11 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-24 bg-bg-secondary"
+      className="pt-12 pb-24 bg-bg-secondary"
       aria-labelledby="features-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-16">
+        <header className="text-center mb-10">
           <h2
             id="features-heading"
             className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"

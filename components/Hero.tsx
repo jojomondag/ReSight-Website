@@ -67,61 +67,78 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary opacity-50" aria-hidden="true" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <header className="text-center">
-          {/* Speakable content for voice search */}
-          <h1
-            id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6"
-            data-speakable="true"
-          >
-            Aim Better.
-            <span className="block text-accent">See More.</span>
-          </h1>
-          <p
-            className="text-xl text-text-secondary max-w-2xl mx-auto mb-10"
-            data-speakable="true"
-          >
-            Custom crosshair overlays, display adjustments for dark and bright maps, and Discord volume control. All in one app.
-          </p>
-          <nav className="flex flex-col sm:flex-row gap-4 justify-center" aria-label="Primary actions">
-            <Link
-              href="/register"
-              className="btn-primary text-lg px-8 py-4"
-              aria-label="Get started with ReSight - Create your account"
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+        {/* Hero Grid: Text Left, Video Right – larger, more viewport */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center min-h-[65vh] sm:min-h-[70vh] lg:min-h-[72vh]">
+          {/* Left Side: Text Content */}
+          <header className="text-center lg:text-left transition-all duration-200">
+            {/* Speakable content for voice search */}
+            <h1
+              id="hero-heading"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-text-primary mb-6 sm:mb-8 leading-tight"
+              data-speakable="true"
             >
-              Get Started
-            </Link>
-            <Link
-              href="/buy"
-              className="btn-secondary text-lg px-8 py-4"
-              aria-label="View ReSight pricing - $5 one-time purchase"
+              Aim Better.
+              <span className="block text-accent">See More.</span>
+            </h1>
+            <p
+              className="text-xl sm:text-2xl text-text-secondary max-w-2xl mx-auto lg:mx-0 mb-10 sm:mb-12 leading-relaxed"
+              data-speakable="true"
             >
-              View Pricing
-            </Link>
-          </nav>
-          <div className="flex justify-center mt-4">
-            <a
-              href="https://discord.gg/AZJ9AA9S"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary text-lg px-8 py-4 flex items-center gap-2 hover:text-accent transition-colors"
-              aria-label="Join our Discord community"
-            >
-              <svg
-                className="w-5 h-5"
-                viewBox="0 0 127 96"
-                fill="currentColor"
-                aria-hidden="true"
+              Custom crosshair overlays, display adjustments for dark and bright maps, and Discord volume control. All in one app.
+            </p>
+            <nav className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" aria-label="Primary actions">
+              <Link
+                href="/register"
+                className="btn-primary text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-lg transition-all duration-200"
+                aria-label="Get started with ReSight - Create your account"
               >
-                <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
-              </svg>
-              <span>Join our Discord</span>
-            </a>
-          </div>
-        </header>
+                Get Started
+              </Link>
+              <Link
+                href="/buy"
+                className="btn-secondary text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-lg transition-all duration-200"
+                aria-label="View ReSight pricing - $5 one-time purchase"
+              >
+                View Pricing
+              </Link>
+            </nav>
+            <div className="flex justify-center lg:justify-start mt-5 sm:mt-6">
+              <a
+                href="https://discord.gg/AZJ9AA9S"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5 flex items-center gap-2 hover:text-accent rounded-lg transition-all duration-200"
+                aria-label="Join our Discord community"
+              >
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+                  viewBox="0 0 127 96"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
+                </svg>
+                <span>Join our Discord</span>
+              </a>
+            </div>
+          </header>
 
-        {/* Before/After Comparison */}
+          {/* Right Side: Video Placeholder */}
+          <div className="flex flex-col w-full transition-all duration-200">
+            <span className="inline-block text-accent font-medium text-sm sm:text-base mb-3 text-center lg:text-left">
+              Watch it work
+            </span>
+            <div
+              className="aspect-video w-full max-w-2xl mx-auto lg:mx-0 lg:max-w-none rounded-lg bg-bg-tertiary border-2 border-dashed border-border flex items-center justify-center"
+              aria-hidden="true"
+            >
+              <span className="text-text-secondary text-sm sm:text-base">Video Placeholder</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Before/After Comparison – unchanged, excluded from "bigger" hero */}
         <div className="mt-16 max-w-5xl mx-auto">
           <h2 className="sr-only">ReSight in action - Before and after comparison</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">

@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import CrosshairShowcase from "@/components/CrosshairShowcase";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -12,6 +13,7 @@ export default function Home() {
 
       {/* Page Sections */}
       <Hero />
+      <CrosshairShowcase />
       <Features />
       <Pricing />
       <FAQ />
