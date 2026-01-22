@@ -6,7 +6,7 @@ const features = [
       "Dark maps too dark? Bright skies washing out enemies? Adjust brightness, contrast & gamma instantly with hotkeys.",
     icon: (
       <svg
-        className="w-9 h-9 lg:w-10 lg:h-10"
+        className="w-5 h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ const features = [
       "Lower voice chat volume with a hotkey during clutch moments. Focus when it matters most.",
     icon: (
       <svg
-        className="w-9 h-9 lg:w-10 lg:h-10"
+        className="w-5 h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ const features = [
       "Auto-apply your settings when games launch. Different presets for different maps or lighting conditions.",
     icon: (
       <svg
-        className="w-9 h-9 lg:w-10 lg:h-10"
+        className="w-5 h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -87,26 +87,26 @@ export default function Features() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 xl:gap-16" role="list">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto" role="list">
           {features.map((feature) => (
             <article
               key={feature.id}
               id={feature.id}
-              className="card hover:border-accent transition-colors p-6 sm:p-8 lg:p-10"
+              className="card hover:border-accent transition-colors p-4 sm:p-5"
               role="listitem"
             >
-              <div className="flex items-start gap-4 lg:gap-5">
+              <div className="flex flex-col items-center text-center gap-3">
                 <div
-                  className="flex-shrink-0 w-14 h-14 lg:w-16 lg:h-16 bg-accent/10 text-accent rounded-lg flex items-center justify-center"
+                  className="flex-shrink-0 w-10 h-10 bg-accent/10 text-accent rounded-lg flex items-center justify-center"
                   aria-hidden="true"
                 >
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl lg:text-3xl font-semibold text-text-primary mb-2">
+                  <h3 className="text-base font-semibold text-text-primary mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-text-secondary text-lg lg:text-xl">{feature.description}</p>
+                  <p className="text-text-secondary text-sm">{feature.description}</p>
                 </div>
               </div>
             </article>

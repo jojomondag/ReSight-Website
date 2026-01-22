@@ -32,17 +32,17 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="max-w-lg mx-auto">
+        <div className="max-w-sm mx-auto">
           <article
-            className="card border-accent"
+            className="card border-accent p-6"
             itemScope
             itemType="https://schema.org/Product"
           >
             <meta itemProp="name" content="ReSight License" />
             <meta itemProp="description" content="Lifetime license for ReSight gaming utility with crosshair overlays, display settings, and Discord volume control." />
 
-            <div className="text-center mb-8 sm:mb-10">
-              <h3 className="text-3xl sm:text-4xl font-bold text-text-primary mb-2">
+            <div className="text-center mb-5">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-1">
                 ReSight License
               </h3>
               <div
@@ -54,21 +54,21 @@ export default function Pricing() {
                 <meta itemProp="priceCurrency" content="USD" />
                 <meta itemProp="availability" content="https://schema.org/InStock" />
                 <span
-                  className="text-5xl sm:text-6xl lg:text-7xl font-bold text-accent"
+                  className="text-4xl sm:text-5xl font-bold text-accent"
                   itemProp="price"
                   content="5.00"
                 >
                   $5
                 </span>
-                <span className="text-text-secondary text-lg sm:text-xl">one-time</span>
+                <span className="text-text-secondary text-sm">one-time</span>
               </div>
             </div>
 
-            <ul className="space-y-5 sm:space-y-6 mb-8 sm:mb-10" role="list">
+            <ul className="space-y-2 mb-5" role="list">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-3">
+                <li key={index} className="flex items-center gap-2">
                   <svg
-                    className="w-6 h-6 text-accent flex-shrink-0"
+                    className="w-4 h-4 text-accent flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -81,21 +81,21 @@ export default function Pricing() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-text-primary text-lg sm:text-xl">{feature}</span>
+                  <span className="text-text-primary text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
 
             <Link
               href="/buy"
-              className="btn-primary w-full text-center block text-lg sm:text-xl py-4"
+              className="btn-primary w-full text-center block text-sm py-2.5"
               itemProp="url"
             >
               Get ReSight Now
             </Link>
           </article>
 
-          <p className="text-text-secondary text-lg sm:text-xl text-center mt-6 max-w-2xl mx-auto">
+          <p className="text-text-secondary text-xs text-center mt-4 max-w-sm mx-auto leading-relaxed">
             ReSight is designed to enhance your gaming experience through improved visual clarity and convenience features.
             We believe in fair play—this tool is not intended to provide unfair advantages.
             Please use responsibly and in accordance with each game&apos;s terms of service.
