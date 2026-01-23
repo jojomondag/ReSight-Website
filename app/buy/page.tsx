@@ -89,7 +89,7 @@ function BuyPageContent() {
                 ReSight License
               </h2>
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-5xl font-bold text-accent">$5</span>
+                <span className="text-5xl font-bold text-accent">$4.30</span>
                 <span className="text-text-secondary">USD</span>
               </div>
               <p className="text-text-secondary mt-2">One-time payment</p>

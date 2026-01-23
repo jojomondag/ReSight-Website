@@ -80,7 +80,7 @@ export function SoftwareJsonLd() {
             "Custom crosshair overlays, display adjustments for dark and bright maps, Discord volume control, and gaming profiles. All in one gaming utility app.",
         offers: {
             "@type": "Offer",
-            price: "5.00",
+            price: "4.30",
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
             priceValidUntil: "2026-12-31",
@@ -183,7 +183,7 @@ export function ProductJsonLd() {
             "@type": "Offer",
             url: "https://resight.gg/buy",
             priceCurrency: "USD",
-            price: "5.00",
+            price: "4.30",
             priceValidUntil: "2026-12-31",
             availability: "https://schema.org/InStock",
             seller: {

@@ -56,9 +56,9 @@ export default function Pricing() {
                 <span
                   className="text-5xl font-bold text-accent"
                   itemProp="price"
-                  content="5.00"
+                  content="4.30"
                 >
-                  $5
+                  $4.30
                 </span>
                 <span className="text-text-secondary">one-time</span>
               </div>
