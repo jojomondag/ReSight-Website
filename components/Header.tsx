@@ -64,7 +64,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <LocaleSwitcher />
             {session ? (
               <>
                 <span className="text-sm text-text-secondary hidden sm:block">
@@ -90,6 +89,9 @@ export default function Header() {
                 </Link>
               </>
             )}
+            <div className="border-l border-border pl-4 ml-2">
+              <LocaleSwitcher />
+            </div>
           </div>
         </div>
       </div>
