@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/lib/i18n/navigation";
 
 interface License {
   id: string;
@@ -32,6 +32,7 @@ export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [release, setRelease] = useState<ReleaseInfo | null>(null);
+  const t = useTranslations("dashboard");
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -97,10 +98,10 @@ export default function DashboardPage() {
     <div className="py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-text-primary mb-2">Dashboard</h1>
-          <p className="text-text-secondary">
-            Manage your ReSight licenses and account.
-          </p>
+          <h1 className="text-3xl font-bold text-text-primary mb-2">
+            {t("title")}
+          </h1>
+          <p className="text-text-secondary">{t("subtitle")}</p>
         </div>
 
         {/* Download Section - shown when user has licenses */}
@@ -109,16 +110,17 @@ export default function DashboardPage() {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <h2 className="text-xl font-semibold text-text-primary mb-1">
-                  Download ReSight
+                  {t("download.title")}
                 </h2>
                 <p className="text-text-secondary text-sm">
-                  {release.version} • {release.fileSize && formatFileSize(release.fileSize)}
+                  {release.version} •{" "}
+                  {release.fileSize && formatFileSize(release.fileSize)}
                 </p>
               </div>
               <a
                 href="/api/download"
                 className="p-4 bg-accent hover:bg-accent-light rounded-full transition-colors"
-                title="Download ReSight"
+                title={t("download.title")}
               >
                 <svg
                   className="w-8 h-8 text-bg-primary"
@@ -151,11 +153,11 @@ export default function DashboardPage() {
                   />
                 </svg>
                 <div className="text-sm">
-                  <p className="text-text-primary font-medium mb-1">Windows Security Notice</p>
+                  <p className="text-text-primary font-medium mb-1">
+                    {t("download.securityNotice")}
+                  </p>
                   <p className="text-text-secondary">
-                    Windows or your antivirus may show a warning because the software is not code-signed.
-                    This is a false positive. ReSight is safe to install. Click &quot;More info&quot; then
-                    &quot;Run anyway&quot; to proceed with the installation.
+                    {t("download.securityMessage")}
                   </p>
                 </div>
               </div>
@@ -165,20 +167,21 @@ export default function DashboardPage() {
 
         <div className="card mb-8">
           <h2 className="text-xl font-semibold text-text-primary mb-4">
-            Account
+            {t("account.title")}
           </h2>
           <p className="text-text-secondary">
-            Logged in as <span className="text-text-primary">{session.user?.email}</span>
+            {t("account.loggedInAs")}{" "}
+            <span className="text-text-primary">{session.user?.email}</span>
           </p>
         </div>
 
         <div className="card">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold text-text-primary">
-              Your Licenses
+              {t("licenses.title")}
             </h2>
             <Link href="/buy" className="btn-primary text-sm">
-              Purchase License
+              {t("licenses.purchaseButton")}
             </Link>
           </div>
 
@@ -200,10 +203,10 @@ export default function DashboardPage() {
                 </svg>
               </div>
               <p className="text-text-secondary mb-4">
-                You don&apos;t have any licenses yet.
+                {t("licenses.noLicenses")}
               </p>
               <Link href="/buy" className="text-accent hover:text-accent-light">
-                Purchase ReSight
+                {t("licenses.purchaseReSight")}
               </Link>
             </div>
           ) : (
@@ -278,25 +281,25 @@ export default function DashboardPage() {
 
                         {license.activatedAt ? (
                           <span className="text-text-secondary">
-                            Activated on{" "}
+                            {t("licenses.activatedOn")}{" "}
                             {new Date(license.activatedAt).toLocaleDateString()}
                           </span>
                         ) : (
                           <span className="text-text-secondary">
-                            Not yet activated
+                            {t("licenses.notActivated")}
                           </span>
                         )}
 
                         {license.machineName && (
                           <span className="text-text-secondary">
-                            Machine: {license.machineName}
+                            {t("licenses.machine")} {license.machineName}
                           </span>
                         )}
                       </div>
                     </div>
 
                     <div className="text-sm text-text-secondary">
-                      Purchased{" "}
+                      {t("licenses.purchased")}{" "}
                       {new Date(license.createdAt).toLocaleDateString()}
                     </div>
                   </div>
@@ -305,7 +308,6 @@ export default function DashboardPage() {
             </div>
           )}
         </div>
-
       </div>
     </div>
   );

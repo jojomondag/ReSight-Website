@@ -1,25 +1,33 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
-
-const features = [
-  "Unlimited crosshair customization",
-  "Advanced display settings",
-  "Discord volume control",
-  "Unlimited gaming profiles",
-  "Priority support",
-  "One machine activation",
-  "Offline use after activation",
-];
+import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/lib/i18n/navigation";
+import { useParams } from "next/navigation";
+import { localePrice, type Locale } from "@/lib/i18n/config";
 
 function BuyPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const params = useParams();
+  const locale = params.locale as Locale;
   const canceled = searchParams.get("canceled");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const t = useTranslations("buy");
+
+  const price = localePrice[locale] || localePrice.en;
+
+  const features = [
+    t("features.crosshair"),
+    t("features.display"),
+    t("features.discord"),
+    t("features.profiles"),
+    t("features.support"),
+    t("features.machine"),
+    t("features.offline"),
+  ];
 
   const handlePurchase = async () => {
     setIsLoading(true);
@@ -28,13 +36,17 @@ function BuyPageContent() {
     try {
       const response = await fetch("/api/checkout", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ locale }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
         if (response.status === 401) {
-          router.push("/login?callbackUrl=/buy");
+          router.push(`/login?callbackUrl=/${locale}/buy`);
           return;
         }
         setError(data.error || "Failed to start checkout");
@@ -56,17 +68,17 @@ function BuyPageContent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-text-primary mb-4">
-            Get ReSight
+            {t("title")}
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            One-time purchase. Lifetime access. No subscriptions or hidden fees.
+            {t("subtitle")}
           </p>
         </div>
 
         {canceled && (
           <div className="max-w-lg mx-auto mb-8">
             <div className="bg-error/10 border border-error text-error rounded-lg px-4 py-3 text-center">
-              Your payment was canceled. You can try again whenever you&apos;re ready.
+              {t("canceledMessage")}
             </div>
           </div>
         )}
@@ -83,16 +95,17 @@ function BuyPageContent() {
           <div className="card border-accent">
             <div className="text-center mb-8">
               <span className="inline-block bg-accent/10 text-accent text-sm font-medium px-3 py-1 rounded-full mb-4">
-                Lifetime License
+                {t("lifetimeLicense")}
               </span>
               <h2 className="text-2xl font-bold text-text-primary mb-2">
-                ReSight License
+                {t("licenseName")}
               </h2>
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-5xl font-bold text-accent">$4.30</span>
-                <span className="text-text-secondary">USD</span>
+                <span className="text-5xl font-bold text-accent">
+                  {price.formatted}
+                </span>
               </div>
-              <p className="text-text-secondary mt-2">One-time payment</p>
+              <p className="text-text-secondary mt-2">{t("oneTimePayment")}</p>
             </div>
 
             <ul className="space-y-4 mb-8">
@@ -121,31 +134,28 @@ function BuyPageContent() {
               disabled={isLoading}
               className="btn-primary w-full text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Processing..." : "Purchase Now"}
+              {isLoading ? t("processing") : t("purchaseNow")}
             </button>
 
             <p className="text-center text-text-secondary text-sm mt-4">
-              Secure payment powered by Stripe
+              {t("securePayment")}
             </p>
           </div>
 
           <div className="mt-8 text-center">
             <p className="text-text-secondary text-sm">
-              Already purchased?{" "}
+              {t("alreadyPurchased")}{" "}
               <Link
                 href="/dashboard"
                 className="text-accent hover:text-accent-light transition-colors"
               >
-                View your licenses
+                {t("viewLicenses")}
               </Link>
             </p>
           </div>
 
           <p className="text-text-secondary text-lg text-center mt-6 max-w-2xl mx-auto">
-            ReSight is designed to enhance your gaming experience through improved visual clarity and convenience features.
-            We believe in fair play—this tool is not intended to provide unfair advantages.
-            Please use responsibly and in accordance with each game&apos;s terms of service.
-            We are not liable for any consequences resulting from use.
+            {t("disclaimer")}
           </p>
         </div>
       </div>
@@ -154,8 +164,12 @@ function BuyPageContent() {
 }
 
 export default function BuyPage() {
+  const t = useTranslations("common");
+
   return (
-    <Suspense fallback={<div className="py-24 text-center">Loading...</div>}>
+    <Suspense
+      fallback={<div className="py-24 text-center">{t("loading")}</div>}
+    >
       <BuyPageContent />
     </Suspense>
   );

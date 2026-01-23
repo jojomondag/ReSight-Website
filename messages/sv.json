@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "title": "ReSight - Spelverktyg för sikte-overlays och skärminställningar",
+    "description": "ReSight är ett spelverktyg för sikte-overlays, skärminställningar, Discord-volymkontroll och spelprofiler. Förbättra din spelupplevelse med kraftfulla anpassningsverktyg."
+  },
+  "header": {
+    "home": "Hem",
+    "pricing": "Priser",
+    "dashboard": "Kontrollpanel",
+    "login": "Logga in",
+    "signOut": "Logga ut",
+    "getStarted": "Kom igång"
+  },
+  "hero": {
+    "title1": "Sikta bättre.",
+    "title2": "Se mer.",
+    "subtitle": "Anpassade sikte-overlays, skärminställningar för mörka och ljusa kartor, och Discord-volymkontroll. Allt i en app.",
+    "getStarted": "Kom igång",
+    "viewPricing": "Se priser",
+    "joinDiscord": "Gå med i Discord",
+    "withReSight": "Med ReSight",
+    "before": "Före"
+  },
+  "features": {
+    "title": "Funktioner",
+    "subtitle": "Allt körs i realtid. Ingen alt-tab. Ingen omstart.",
+    "crosshair": {
+      "title": "Sikte-overlay",
+      "description": "Anpassade sikten som fungerar i alla spel. Pixelperfekt precision med färger, storlekar och stilar du styr."
+    },
+    "visual": {
+      "title": "Visuell klarhet",
+      "description": "Mörka kartor för mörka? Ljusa himlar som döljer fiender? Justera ljusstyrka, kontrast och gamma direkt med snabbtangenter."
+    },
+    "discord": {
+      "title": "Discord-volymkontroll",
+      "description": "Sänk röstchattvolymen med en snabbtangent under avgörande ögonblick. Fokusera när det gäller som mest."
+    },
+    "profiles": {
+      "title": "Spelprofiler",
+      "description": "Auto-tillämpa dina inställningar när spel startar. Olika förinställningar för olika kartor eller ljusförhållanden."
+    }
+  },
+  "pricing": {
+    "title": "Enkel prissättning",
+    "subtitle": "Engångsköp. Livstidsåtkomst. Inga prenumerationer eller dolda avgifter.",
+    "licenseName": "ReSight-licens",
+    "oneTime": "engångs",
+    "features": {
+      "crosshair": "Obegränsad sikte-anpassning",
+      "display": "Avancerade skärminställningar",
+      "discord": "Discord-volymkontroll",
+      "profiles": "Obegränsade spelprofiler",
+      "support": "Prioriterad support"
+    },
+    "cta": "Skaffa ReSight nu",
+    "disclaimer": "ReSight är utformat för att förbättra din spelupplevelse genom förbättrad visuell klarhet och bekvämlighetsfunktioner. Vi tror på rättvist spel—detta verktyg är inte avsett att ge orättvisa fördelar. Använd ansvarsfullt och i enlighet med varje spels användarvillkor. Vi är inte ansvariga för eventuella konsekvenser av användningen."
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "subtitle": "Har du frågor? Vi har svar. Hitta vad du behöver nedan.",
+    "items": {
+      "games": {
+        "question": "Vilka spel fungerar ReSight med?",
+        "answer": "ReSight fungerar med praktiskt taget alla spel. Sikte-overlayen ligger ovanpå din skärm, så den är kompatibel med alla spel oavsett om de har inbyggda siktealternativ."
+      },
+      "anticheat": {
+        "question": "Är ReSight säkert att använda med anti-fusk?",
+        "answer": "ReSight är en skärm-overlay-applikation som inte injicerar i spel eller modifierar spelfiler. Kontrollera dock alltid spelets användarvillkor eftersom regler varierar mellan spel och anti-fusksystem."
+      },
+      "computers": {
+        "question": "Kan jag använda ReSight på flera datorer?",
+        "answer": "Varje licens aktiveras på en maskin. Om du behöver flytta din licens till en ny dator kan du kontakta support för att återställa din aktivering."
+      },
+      "discordVolume": {
+        "question": "Hur fungerar Discord-volymkontrollen?",
+        "answer": "Tryck på en snabbtangent för att omedelbart sänka dina lagkamraters röstchattvolym under intensiva ögonblick. Tryck igen för att återställa. Perfekt för avgörande situationer där du behöver fokusera."
+      },
+      "offline": {
+        "question": "Behöver jag vara online för att använda ReSight?",
+        "answer": "Efter initial aktivering fungerar ReSight helt offline. Ingen internetanslutning krävs för daglig användning."
+      },
+      "cost": {
+        "question": "Hur mycket kostar ReSight?",
+        "answer": "ReSight är ett engångsköp på 49 kr SEK. Detta inkluderar livstidsåtkomst till alla funktioner, obegränsade uppdateringar och prioriterad support. Inga prenumerationer eller dolda avgifter."
+      },
+      "displaySettings": {
+        "question": "Vilka skärminställningar kan jag justera med ReSight?",
+        "answer": "ReSight låter dig justera ljusstyrka, kontrast och gamma i realtid med snabbtangenter. Detta är särskilt användbart för mörka kartor i spel som Hunt: Showdown eller ljusa miljöer i andra spel."
+      }
+    }
+  },
+  "footer": {
+    "description": "Spelverktyg för sikte-overlays, skärminställningar, Discord-volymkontroll och spelprofiler. Förbättra din spelupplevelse med kraftfulla anpassningsverktyg.",
+    "product": "Produkt",
+    "features": "Funktioner",
+    "pricing": "Priser",
+    "dashboard": "Kontrollpanel",
+    "account": "Konto",
+    "login": "Logga in",
+    "register": "Registrera",
+    "copyright": "ReSight. Alla rättigheter förbehållna.",
+    "joinDiscord": "Gå med i Discord"
+  },
+  "login": {
+    "title": "Välkommen tillbaka",
+    "email": "E-post",
+    "emailPlaceholder": "du@exempel.com",
+    "password": "Lösenord",
+    "passwordPlaceholder": "Ange ditt lösenord",
+    "submit": "Logga in",
+    "submitting": "Loggar in...",
+    "noAccount": "Har du inget konto?",
+    "createOne": "Skapa ett",
+    "errorInvalid": "Ogiltig e-post eller lösenord",
+    "errorGeneric": "Ett fel uppstod. Försök igen."
+  },
+  "register": {
+    "title": "Skapa konto",
+    "email": "E-post",
+    "emailPlaceholder": "du@exempel.com",
+    "password": "Lösenord",
+    "passwordPlaceholder": "Minst 8 tecken",
+    "confirmPassword": "Bekräfta lösenord",
+    "confirmPasswordPlaceholder": "Bekräfta ditt lösenord",
+    "terms": "Jag godkänner användarvillkoren och integritetspolicyn",
+    "submit": "Skapa konto",
+    "submitting": "Skapar konto...",
+    "hasAccount": "Har du redan ett konto?",
+    "signIn": "Logga in",
+    "errorPasswordMismatch": "Lösenorden matchar inte",
+    "errorTerms": "Du måste godkänna användarvillkoren",
+    "errorGeneric": "Ett fel uppstod. Försök igen."
+  },
+  "buy": {
+    "title": "Skaffa ReSight",
+    "subtitle": "Engångsköp. Livstidsåtkomst. Inga prenumerationer eller dolda avgifter.",
+    "canceledMessage": "Din betalning avbröts. Du kan försöka igen när du är redo.",
+    "lifetimeLicense": "Livstidslicens",
+    "licenseName": "ReSight-licens",
+    "oneTimePayment": "Engångsbetalning",
+    "features": {
+      "crosshair": "Obegränsad sikte-anpassning",
+      "display": "Avancerade skärminställningar",
+      "discord": "Discord-volymkontroll",
+      "profiles": "Obegränsade spelprofiler",
+      "support": "Prioriterad support",
+      "machine": "En maskin-aktivering",
+      "offline": "Offline-användning efter aktivering"
+    },
+    "purchaseNow": "Köp nu",
+    "processing": "Bearbetar...",
+    "securePayment": "Säker betalning via Stripe",
+    "alreadyPurchased": "Redan köpt?",
+    "viewLicenses": "Visa dina licenser",
+    "disclaimer": "ReSight är utformat för att förbättra din spelupplevelse genom förbättrad visuell klarhet och bekvämlighetsfunktioner. Vi tror på rättvist spel—detta verktyg är inte avsett att ge orättvisa fördelar. Använd ansvarsfullt och i enlighet med varje spels användarvillkor. Vi är inte ansvariga för eventuella konsekvenser av användningen."
+  },
+  "dashboard": {
+    "title": "Kontrollpanel",
+    "subtitle": "Hantera dina ReSight-licenser och konto.",
+    "download": {
+      "title": "Ladda ner ReSight",
+      "securityNotice": "Windows-säkerhetsmeddelande",
+      "securityMessage": "Windows eller ditt antivirusprogram kan visa en varning eftersom programvaran inte är kodsignerad. Detta är ett falskt positivt. ReSight är säkert att installera. Klicka på \"Mer info\" och sedan \"Kör ändå\" för att fortsätta med installationen."
+    },
+    "account": {
+      "title": "Konto",
+      "loggedInAs": "Inloggad som"
+    },
+    "licenses": {
+      "title": "Dina licenser",
+      "purchaseButton": "Köp licens",
+      "noLicenses": "Du har inga licenser än.",
+      "purchaseReSight": "Köp ReSight",
+      "activatedOn": "Aktiverad",
+      "notActivated": "Inte aktiverad än",
+      "machine": "Maskin:",
+      "purchased": "Köpt"
+    }
+  },
+  "success": {
+    "title": "Tack för ditt köp!",
+    "subtitle": "Din ReSight-licens har skapats. Kopiera licensnyckeln nedan och använd den för att aktivera appen.",
+    "licenseKey": "Din licensnyckel",
+    "emailSent": "En kopia har också skickats till",
+    "processingMessage": "Din betalning behandlas. Kolla din e-post efter din licensnyckel, eller besök din kontrollpanel.",
+    "errorCheckEmail": "Om du slutförde ditt köp, kolla din e-post eller",
+    "viewDashboard": "visa din kontrollpanel",
+    "downloadButton": "Ladda ner ReSight",
+    "dashboardButton": "Visa kontrollpanel",
+    "retrievingLicense": "Hämtar din licens..."
+  },
+  "localeSwitcher": {
+    "label": "Språk"
+  },
+  "common": {
+    "loading": "Laddar...",
+    "error": "Fel"
+  }
+}

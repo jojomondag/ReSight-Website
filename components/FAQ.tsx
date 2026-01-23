@@ -1,48 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { FAQJsonLd } from "./JsonLd";
-
-const faqs = [
-  {
-    question: "What games does ReSight work with?",
-    answer:
-      "ReSight works with virtually any game. The crosshair overlay sits on top of your screen, so it's compatible with all games regardless of whether they have built-in crosshair options.",
-  },
-  {
-    question: "Is ReSight safe to use with anti-cheat?",
-    answer:
-      "ReSight is a screen overlay application that doesn't inject into games or modify game files. However, always check your game's terms of service as policies vary between games and anti-cheat systems.",
-  },
-  {
-    question: "Can I use ReSight on multiple computers?",
-    answer:
-      "Each license is activated on one machine. If you need to move your license to a new computer, you can contact support to have your activation reset.",
-  },
-  {
-    question: "How does Discord volume control work?",
-    answer:
-      "Press a hotkey to instantly lower your teammates' voice chat volume during intense moments. Press again to restore it. Great for clutch situations where you need to focus.",
-  },
-  {
-    question: "Do I need to be online to use ReSight?",
-    answer:
-      "After initial activation, ReSight works completely offline. No internet connection is required for day-to-day use.",
-  },
-  {
-    question: "How much does ReSight cost?",
-    answer:
-      "ReSight is a one-time purchase of $5 USD. This includes lifetime access to all features, unlimited updates, and priority support. No subscriptions or hidden fees.",
-  },
-  {
-    question: "What display settings can I adjust with ReSight?",
-    answer:
-      "ReSight allows you to adjust brightness, contrast, and gamma in real-time using hotkeys. This is especially useful for dark maps in games like Hunt: Showdown or bright environments in other games.",
-  },
-];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const t = useTranslations("faq");
+
+  const faqKeys = [
+    "games",
+    "anticheat",
+    "computers",
+    "discordVolume",
+    "offline",
+    "cost",
+    "displaySettings",
+  ] as const;
+
+  const faqs = faqKeys.map((key) => ({
+    question: t(`items.${key}.question`),
+    answer: t(`items.${key}.answer`),
+  }));
 
   return (
     <section
@@ -59,11 +38,9 @@ export default function FAQ() {
             id="faq-heading"
             className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"
           >
-            Frequently Asked Questions
+            {t("title")}
           </h2>
-          <p className="text-text-secondary">
-            Got questions? We&apos;ve got answers. Find what you need below.
-          </p>
+          <p className="text-text-secondary">{t("subtitle")}</p>
         </div>
 
         <div className="space-y-4" role="list">
@@ -88,8 +65,9 @@ export default function FAQ() {
                   {faq.question}
                 </span>
                 <svg
-                  className={`w-5 h-5 text-text-secondary transition-transform ${openIndex === index ? "rotate-180" : ""
-                    }`}
+                  className={`w-5 h-5 text-text-secondary transition-transform ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -105,16 +83,14 @@ export default function FAQ() {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96 mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? "max-h-96 mt-4" : "max-h-0"
+                }`}
                 itemScope
                 itemType="https://schema.org/Answer"
                 itemProp="acceptedAnswer"
               >
-                <p
-                  className="text-text-secondary"
-                  itemProp="text"
-                >
+                <p className="text-text-secondary" itemProp="text">
                   {faq.answer}
                 </p>
               </div>

@@ -2,8 +2,9 @@
 
 import { Suspense, useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/lib/i18n/navigation";
 
 function LoginPageContent() {
   const router = useRouter();
@@ -13,6 +14,7 @@ function LoginPageContent() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations("login");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,13 +29,13 @@ function LoginPageContent() {
       });
 
       if (result?.error) {
-        setError("Invalid email or password");
+        setError(t("errorInvalid"));
       } else {
         router.push(callbackUrl);
         router.refresh();
       }
     } catch {
-      setError("An error occurred. Please try again.");
+      setError(t("errorGeneric"));
     } finally {
       setIsLoading(false);
     }
@@ -44,7 +46,7 @@ function LoginPageContent() {
       <div className="w-full max-w-md">
         <div className="card">
           <h1 className="text-2xl font-bold text-text-primary text-center mb-8">
-            Welcome Back
+            {t("title")}
           </h1>
 
           {error && (
@@ -59,7 +61,7 @@ function LoginPageContent() {
                 htmlFor="email"
                 className="block text-sm font-medium text-text-primary mb-2"
               >
-                Email
+                {t("email")}
               </label>
               <input
                 id="email"
@@ -67,7 +69,7 @@ function LoginPageContent() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input-field"
-                placeholder="you@example.com"
+                placeholder={t("emailPlaceholder")}
                 required
               />
             </div>
@@ -77,7 +79,7 @@ function LoginPageContent() {
                 htmlFor="password"
                 className="block text-sm font-medium text-text-primary mb-2"
               >
-                Password
+                {t("password")}
               </label>
               <input
                 id="password"
@@ -85,7 +87,7 @@ function LoginPageContent() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input-field"
-                placeholder="Enter your password"
+                placeholder={t("passwordPlaceholder")}
                 required
               />
             </div>
@@ -95,17 +97,17 @@ function LoginPageContent() {
               disabled={isLoading}
               className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Signing in..." : "Sign In"}
+              {isLoading ? t("submitting") : t("submit")}
             </button>
           </form>
 
           <p className="mt-6 text-center text-text-secondary">
-            Don&apos;t have an account?{" "}
+            {t("noAccount")}{" "}
             <Link
               href="/register"
               className="text-accent hover:text-accent-light transition-colors"
             >
-              Create one
+              {t("createOne")}
             </Link>
           </p>
         </div>
@@ -115,8 +117,16 @@ function LoginPageContent() {
 }
 
 export default function LoginPage() {
+  const t = useTranslations("common");
+
   return (
-    <Suspense fallback={<div className="min-h-[calc(100vh-200px)] flex items-center justify-center">Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="min-h-[calc(100vh-200px)] flex items-center justify-center">
+          {t("loading")}
+        </div>
+      }
+    >
       <LoginPageContent />
     </Suspense>
   );

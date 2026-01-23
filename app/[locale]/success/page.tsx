@@ -2,7 +2,8 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/i18n/navigation";
 
 interface LicenseData {
   licenseKey: string;
@@ -16,6 +17,7 @@ function SuccessPageContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+  const t = useTranslations("success");
 
   useEffect(() => {
     if (sessionId) {
@@ -58,7 +60,7 @@ function SuccessPageContent() {
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-text-secondary">Retrieving your license...</p>
+          <p className="text-text-secondary">{t("retrievingLicense")}</p>
         </div>
       </div>
     );
@@ -85,29 +87,28 @@ function SuccessPageContent() {
           </div>
 
           <h1 className="text-3xl font-bold text-text-primary mb-4">
-            Thank You for Your Purchase!
+            {t("title")}
           </h1>
 
           {error ? (
             <div className="bg-error/10 border border-error text-error rounded-lg px-4 py-3 mb-6">
               {error}
               <p className="mt-2 text-sm">
-                If you completed your purchase, check your email or{" "}
+                {t("errorCheckEmail")}{" "}
                 <Link href="/dashboard" className="underline">
-                  view your dashboard
+                  {t("viewDashboard")}
                 </Link>
                 .
               </p>
             </div>
           ) : licenseData ? (
             <>
-              <p className="text-text-secondary mb-8">
-                Your ReSight license has been created. Copy the license key below
-                and use it to activate the app.
-              </p>
+              <p className="text-text-secondary mb-8">{t("subtitle")}</p>
 
               <div className="bg-bg-tertiary border border-border rounded-lg p-4 mb-6">
-                <p className="text-sm text-text-secondary mb-2">Your License Key</p>
+                <p className="text-sm text-text-secondary mb-2">
+                  {t("licenseKey")}
+                </p>
                 <div className="flex items-center justify-center gap-4">
                   <code className="text-xl font-mono text-accent">
                     {licenseData.licenseKey}
@@ -151,14 +152,11 @@ function SuccessPageContent() {
               </div>
 
               <p className="text-text-secondary text-sm mb-8">
-                A copy has also been sent to <strong>{licenseData.email}</strong>
+                {t("emailSent")} <strong>{licenseData.email}</strong>
               </p>
             </>
           ) : (
-            <p className="text-text-secondary mb-8">
-              Your payment is being processed. Check your email for your license key,
-              or visit your dashboard.
-            </p>
+            <p className="text-text-secondary mb-8">{t("processingMessage")}</p>
           )}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -167,10 +165,10 @@ function SuccessPageContent() {
               className="btn-primary"
               target="_blank"
             >
-              Download ReSight
+              {t("downloadButton")}
             </Link>
             <Link href="/dashboard" className="btn-secondary">
-              View Dashboard
+              {t("dashboardButton")}
             </Link>
           </div>
         </div>
@@ -180,8 +178,19 @@ function SuccessPageContent() {
 }
 
 export default function SuccessPage() {
+  const t = useTranslations("success");
+
   return (
-    <Suspense fallback={<div className="min-h-[calc(100vh-200px)] flex items-center justify-center"><div className="text-center"><div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" /><p className="text-text-secondary">Loading...</p></div></div>}>
+    <Suspense
+      fallback={
+        <div className="min-h-[calc(100vh-200px)] flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-text-secondary">{t("retrievingLicense")}</p>
+          </div>
+        </div>
+      }
+    >
       <SuccessPageContent />
     </Suspense>
   );

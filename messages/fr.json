@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "title": "ReSight - Utilitaire de jeu pour les superpositions de réticule et les paramètres d'affichage",
+    "description": "ReSight est un utilitaire de jeu pour les superpositions de réticule, les paramètres d'affichage, le contrôle du volume Discord et les profils de jeu. Améliorez votre expérience de jeu avec des outils de personnalisation puissants."
+  },
+  "header": {
+    "home": "Accueil",
+    "pricing": "Tarifs",
+    "dashboard": "Tableau de bord",
+    "login": "Connexion",
+    "signOut": "Déconnexion",
+    "getStarted": "Commencer"
+  },
+  "hero": {
+    "title1": "Visez mieux.",
+    "title2": "Voyez plus.",
+    "subtitle": "Superpositions de réticule personnalisées, ajustements d'affichage pour les cartes sombres et lumineuses, et contrôle du volume Discord. Tout dans une seule application.",
+    "getStarted": "Commencer",
+    "viewPricing": "Voir les tarifs",
+    "joinDiscord": "Rejoindre Discord",
+    "withReSight": "Avec ReSight",
+    "before": "Avant"
+  },
+  "features": {
+    "title": "Fonctionnalités",
+    "subtitle": "Tout fonctionne en temps réel. Pas d'alt-tab. Pas de redémarrage.",
+    "crosshair": {
+      "title": "Superposition de réticule",
+      "description": "Réticules personnalisés qui fonctionnent dans n'importe quel jeu. Précision au pixel près avec des couleurs, tailles et styles que vous contrôlez."
+    },
+    "visual": {
+      "title": "Clarté visuelle",
+      "description": "Cartes sombres trop sombres ? Ciels lumineux masquant les ennemis ? Ajustez la luminosité, le contraste et le gamma instantanément avec des raccourcis clavier."
+    },
+    "discord": {
+      "title": "Contrôle du volume Discord",
+      "description": "Baissez le volume du chat vocal avec un raccourci clavier pendant les moments cruciaux. Concentrez-vous quand ça compte le plus."
+    },
+    "profiles": {
+      "title": "Profils de jeu",
+      "description": "Appliquez automatiquement vos paramètres au lancement des jeux. Différents préréglages pour différentes cartes ou conditions d'éclairage."
+    }
+  },
+  "pricing": {
+    "title": "Tarification simple",
+    "subtitle": "Achat unique. Accès à vie. Pas d'abonnements ni de frais cachés.",
+    "licenseName": "Licence ReSight",
+    "oneTime": "unique",
+    "features": {
+      "crosshair": "Personnalisation de réticule illimitée",
+      "display": "Paramètres d'affichage avancés",
+      "discord": "Contrôle du volume Discord",
+      "profiles": "Profils de jeu illimités",
+      "support": "Support prioritaire"
+    },
+    "cta": "Obtenir ReSight maintenant",
+    "disclaimer": "ReSight est conçu pour améliorer votre expérience de jeu grâce à une meilleure clarté visuelle et des fonctionnalités pratiques. Nous croyons au jeu équitable—cet outil n'est pas destiné à fournir des avantages injustes. Veuillez l'utiliser de manière responsable et conformément aux conditions d'utilisation de chaque jeu. Nous ne sommes pas responsables des conséquences résultant de l'utilisation."
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "subtitle": "Vous avez des questions ? Nous avons des réponses. Trouvez ce dont vous avez besoin ci-dessous.",
+    "items": {
+      "games": {
+        "question": "Avec quels jeux ReSight fonctionne-t-il ?",
+        "answer": "ReSight fonctionne avec pratiquement n'importe quel jeu. La superposition de réticule se place au-dessus de votre écran, elle est donc compatible avec tous les jeux, qu'ils aient des options de réticule intégrées ou non."
+      },
+      "anticheat": {
+        "question": "ReSight est-il sûr à utiliser avec l'anti-triche ?",
+        "answer": "ReSight est une application de superposition d'écran qui ne s'injecte pas dans les jeux et ne modifie pas les fichiers de jeu. Cependant, vérifiez toujours les conditions d'utilisation de votre jeu car les politiques varient entre les jeux et les systèmes anti-triche."
+      },
+      "computers": {
+        "question": "Puis-je utiliser ReSight sur plusieurs ordinateurs ?",
+        "answer": "Chaque licence est activée sur une seule machine. Si vous devez transférer votre licence sur un nouvel ordinateur, vous pouvez contacter le support pour réinitialiser votre activation."
+      },
+      "discordVolume": {
+        "question": "Comment fonctionne le contrôle du volume Discord ?",
+        "answer": "Appuyez sur un raccourci clavier pour baisser instantanément le volume du chat vocal de vos coéquipiers pendant les moments intenses. Appuyez à nouveau pour le restaurer. Idéal pour les situations cruciales où vous devez vous concentrer."
+      },
+      "offline": {
+        "question": "Dois-je être en ligne pour utiliser ReSight ?",
+        "answer": "Après l'activation initiale, ReSight fonctionne complètement hors ligne. Aucune connexion Internet n'est requise pour une utilisation quotidienne."
+      },
+      "cost": {
+        "question": "Combien coûte ReSight ?",
+        "answer": "ReSight est un achat unique de 3,99 € EUR. Cela inclut un accès à vie à toutes les fonctionnalités, des mises à jour illimitées et un support prioritaire. Pas d'abonnements ni de frais cachés."
+      },
+      "displaySettings": {
+        "question": "Quels paramètres d'affichage puis-je ajuster avec ReSight ?",
+        "answer": "ReSight vous permet d'ajuster la luminosité, le contraste et le gamma en temps réel à l'aide de raccourcis clavier. C'est particulièrement utile pour les cartes sombres dans des jeux comme Hunt: Showdown ou les environnements lumineux dans d'autres jeux."
+      }
+    }
+  },
+  "footer": {
+    "description": "Utilitaire de jeu pour les superpositions de réticule, les paramètres d'affichage, le contrôle du volume Discord et les profils de jeu. Améliorez votre expérience de jeu avec des outils de personnalisation puissants.",
+    "product": "Produit",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "dashboard": "Tableau de bord",
+    "account": "Compte",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "copyright": "ReSight. Tous droits réservés.",
+    "joinDiscord": "Rejoindre Discord"
+  },
+  "login": {
+    "title": "Bon retour",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@exemple.com",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "submit": "Se connecter",
+    "submitting": "Connexion en cours...",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "createOne": "Créez-en un",
+    "errorInvalid": "E-mail ou mot de passe invalide",
+    "errorGeneric": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "register": {
+    "title": "Créer un compte",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@exemple.com",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Au moins 8 caractères",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "terms": "J'accepte les conditions d'utilisation et la politique de confidentialité",
+    "submit": "Créer un compte",
+    "submitting": "Création du compte...",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "signIn": "Se connecter",
+    "errorPasswordMismatch": "Les mots de passe ne correspondent pas",
+    "errorTerms": "Vous devez accepter les conditions générales",
+    "errorGeneric": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "buy": {
+    "title": "Obtenir ReSight",
+    "subtitle": "Achat unique. Accès à vie. Pas d'abonnements ni de frais cachés.",
+    "canceledMessage": "Votre paiement a été annulé. Vous pouvez réessayer quand vous êtes prêt.",
+    "lifetimeLicense": "Licence à vie",
+    "licenseName": "Licence ReSight",
+    "oneTimePayment": "Paiement unique",
+    "features": {
+      "crosshair": "Personnalisation de réticule illimitée",
+      "display": "Paramètres d'affichage avancés",
+      "discord": "Contrôle du volume Discord",
+      "profiles": "Profils de jeu illimités",
+      "support": "Support prioritaire",
+      "machine": "Activation sur une machine",
+      "offline": "Utilisation hors ligne après activation"
+    },
+    "purchaseNow": "Acheter maintenant",
+    "processing": "Traitement en cours...",
+    "securePayment": "Paiement sécurisé par Stripe",
+    "alreadyPurchased": "Déjà acheté ?",
+    "viewLicenses": "Voir vos licences",
+    "disclaimer": "ReSight est conçu pour améliorer votre expérience de jeu grâce à une meilleure clarté visuelle et des fonctionnalités pratiques. Nous croyons au jeu équitable—cet outil n'est pas destiné à fournir des avantages injustes. Veuillez l'utiliser de manière responsable et conformément aux conditions d'utilisation de chaque jeu. Nous ne sommes pas responsables des conséquences résultant de l'utilisation."
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Gérez vos licences ReSight et votre compte.",
+    "download": {
+      "title": "Télécharger ReSight",
+      "securityNotice": "Avis de sécurité Windows",
+      "securityMessage": "Windows ou votre antivirus peut afficher un avertissement car le logiciel n'est pas signé numériquement. C'est un faux positif. ReSight est sûr à installer. Cliquez sur \"Plus d'infos\" puis sur \"Exécuter quand même\" pour procéder à l'installation."
+    },
+    "account": {
+      "title": "Compte",
+      "loggedInAs": "Connecté en tant que"
+    },
+    "licenses": {
+      "title": "Vos licences",
+      "purchaseButton": "Acheter une licence",
+      "noLicenses": "Vous n'avez pas encore de licences.",
+      "purchaseReSight": "Acheter ReSight",
+      "activatedOn": "Activé le",
+      "notActivated": "Pas encore activé",
+      "machine": "Machine :",
+      "purchased": "Acheté"
+    }
+  },
+  "success": {
+    "title": "Merci pour votre achat !",
+    "subtitle": "Votre licence ReSight a été créée. Copiez la clé de licence ci-dessous et utilisez-la pour activer l'application.",
+    "licenseKey": "Votre clé de licence",
+    "emailSent": "Une copie a également été envoyée à",
+    "processingMessage": "Votre paiement est en cours de traitement. Vérifiez votre e-mail pour obtenir votre clé de licence, ou visitez votre tableau de bord.",
+    "errorCheckEmail": "Si vous avez terminé votre achat, vérifiez votre e-mail ou",
+    "viewDashboard": "consultez votre tableau de bord",
+    "downloadButton": "Télécharger ReSight",
+    "dashboardButton": "Voir le tableau de bord",
+    "retrievingLicense": "Récupération de votre licence..."
+  },
+  "localeSwitcher": {
+    "label": "Langue"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur"
+  }
+}

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/lib/i18n/navigation";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -12,6 +12,7 @@ export default function RegisterPage() {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations("register");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,13 +20,13 @@ export default function RegisterPage() {
     setError("");
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError(t("errorPasswordMismatch"));
       setIsLoading(false);
       return;
     }
 
     if (!acceptTerms) {
-      setError("You must accept the terms and conditions");
+      setError(t("errorTerms"));
       setIsLoading(false);
       return;
     }
@@ -48,7 +49,7 @@ export default function RegisterPage() {
 
       router.push("/login?registered=true");
     } catch {
-      setError("An error occurred. Please try again.");
+      setError(t("errorGeneric"));
     } finally {
       setIsLoading(false);
     }
@@ -59,7 +60,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <div className="card">
           <h1 className="text-2xl font-bold text-text-primary text-center mb-8">
-            Create Account
+            {t("title")}
           </h1>
 
           {error && (
@@ -74,7 +75,7 @@ export default function RegisterPage() {
                 htmlFor="email"
                 className="block text-sm font-medium text-text-primary mb-2"
               >
-                Email
+                {t("email")}
               </label>
               <input
                 id="email"
@@ -82,7 +83,7 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input-field"
-                placeholder="you@example.com"
+                placeholder={t("emailPlaceholder")}
                 required
               />
             </div>
@@ -92,7 +93,7 @@ export default function RegisterPage() {
                 htmlFor="password"
                 className="block text-sm font-medium text-text-primary mb-2"
               >
-                Password
+                {t("password")}
               </label>
               <input
                 id="password"
@@ -100,7 +101,7 @@ export default function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input-field"
-                placeholder="At least 8 characters"
+                placeholder={t("passwordPlaceholder")}
                 minLength={8}
                 required
               />
@@ -111,7 +112,7 @@ export default function RegisterPage() {
                 htmlFor="confirmPassword"
                 className="block text-sm font-medium text-text-primary mb-2"
               >
-                Confirm Password
+                {t("confirmPassword")}
               </label>
               <input
                 id="confirmPassword"
@@ -119,7 +120,7 @@ export default function RegisterPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className="input-field"
-                placeholder="Confirm your password"
+                placeholder={t("confirmPasswordPlaceholder")}
                 minLength={8}
                 required
               />
@@ -134,7 +135,7 @@ export default function RegisterPage() {
                 className="mt-1 w-4 h-4 accent-accent"
               />
               <label htmlFor="terms" className="text-sm text-text-secondary">
-                I agree to the terms of service and privacy policy
+                {t("terms")}
               </label>
             </div>
 
@@ -143,17 +144,17 @@ export default function RegisterPage() {
               disabled={isLoading}
               className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Creating account..." : "Create Account"}
+              {isLoading ? t("submitting") : t("submit")}
             </button>
           </form>
 
           <p className="mt-6 text-center text-text-secondary">
-            Already have an account?{" "}
+            {t("hasAccount")}{" "}
             <Link
               href="/login"
               className="text-accent hover:text-accent-light transition-colors"
             >
-              Sign in
+              {t("signIn")}
             </Link>
           </p>
         </div>

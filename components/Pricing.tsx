@@ -1,23 +1,30 @@
-import Link from "next/link";
-import { ProductJsonLd } from "./JsonLd";
+"use client";
 
-const features = [
-  "Unlimited crosshair customization",
-  "Advanced display settings",
-  "Discord volume control",
-  "Unlimited gaming profiles",
-  "Priority support",
-];
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
+import { Link } from "@/lib/i18n/navigation";
+import { ProductJsonLd } from "./JsonLd";
+import { localePrice, localeCurrency, type Locale } from "@/lib/i18n/config";
 
 export default function Pricing() {
+  const t = useTranslations("pricing");
+  const params = useParams();
+  const locale = (params.locale as Locale) || "en";
+  const price = localePrice[locale] || localePrice.en;
+  const currency = localeCurrency[locale] || "USD";
+
+  const features = [
+    t("features.crosshair"),
+    t("features.display"),
+    t("features.discord"),
+    t("features.profiles"),
+    t("features.support"),
+  ];
+
   return (
-    <section
-      id="pricing"
-      className="py-24"
-      aria-labelledby="pricing-heading"
-    >
+    <section id="pricing" className="py-24" aria-labelledby="pricing-heading">
       {/* Product Schema for Rich Snippets */}
-      <ProductJsonLd />
+      <ProductJsonLd locale={locale} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -25,10 +32,10 @@ export default function Pricing() {
             id="pricing-heading"
             className="text-3xl sm:text-4xl font-bold text-text-primary mb-4"
           >
-            Simple Pricing
+            {t("title")}
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            One-time purchase. Lifetime access. No subscriptions or hidden fees.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -39,11 +46,14 @@ export default function Pricing() {
             itemType="https://schema.org/Product"
           >
             <meta itemProp="name" content="ReSight License" />
-            <meta itemProp="description" content="Lifetime license for ReSight gaming utility with crosshair overlays, display settings, and Discord volume control." />
+            <meta
+              itemProp="description"
+              content="Lifetime license for ReSight gaming utility with crosshair overlays, display settings, and Discord volume control."
+            />
 
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-text-primary mb-2">
-                ReSight License
+                {t("licenseName")}
               </h3>
               <div
                 className="flex items-baseline justify-center gap-2"
@@ -51,16 +61,19 @@ export default function Pricing() {
                 itemScope
                 itemType="https://schema.org/Offer"
               >
-                <meta itemProp="priceCurrency" content="USD" />
-                <meta itemProp="availability" content="https://schema.org/InStock" />
+                <meta itemProp="priceCurrency" content={currency} />
+                <meta
+                  itemProp="availability"
+                  content="https://schema.org/InStock"
+                />
                 <span
                   className="text-5xl font-bold text-accent"
                   itemProp="price"
-                  content="4.30"
+                  content={price.amount}
                 >
-                  $4.30
+                  {price.formatted}
                 </span>
-                <span className="text-text-secondary">one-time</span>
+                <span className="text-text-secondary">{t("oneTime")}</span>
               </div>
             </div>
 
@@ -91,15 +104,12 @@ export default function Pricing() {
               className="btn-primary w-full text-center block text-lg"
               itemProp="url"
             >
-              Get ReSight Now
+              {t("cta")}
             </Link>
           </article>
 
           <p className="text-text-secondary text-lg text-center mt-6 max-w-2xl mx-auto">
-            ReSight is designed to enhance your gaming experience through improved visual clarity and convenience features.
-            We believe in fair play—this tool is not intended to provide unfair advantages.
-            Please use responsibly and in accordance with each game&apos;s terms of service.
-            We are not liable for any consequences resulting from use.
+            {t("disclaimer")}
           </p>
         </div>
       </div>

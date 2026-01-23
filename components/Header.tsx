@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/lib/i18n/navigation";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Header() {
   const pathname = usePathname();
   const { data: session } = useSession();
+  const t = useTranslations("header");
 
   const isActive = (path: string) => pathname === path;
 
@@ -35,7 +37,7 @@ export default function Header() {
                   : "text-text-secondary hover:text-text-primary"
               }`}
             >
-              Home
+              {t("home")}
             </Link>
             <Link
               href="/buy"
@@ -45,7 +47,7 @@ export default function Header() {
                   : "text-text-secondary hover:text-text-primary"
               }`}
             >
-              Pricing
+              {t("pricing")}
             </Link>
             {session && (
               <Link
@@ -56,12 +58,13 @@ export default function Header() {
                     : "text-text-secondary hover:text-text-primary"
                 }`}
               >
-                Dashboard
+                {t("dashboard")}
               </Link>
             )}
           </nav>
 
           <div className="flex items-center gap-4">
+            <LocaleSwitcher />
             {session ? (
               <>
                 <span className="text-sm text-text-secondary hidden sm:block">
@@ -71,7 +74,7 @@ export default function Header() {
                   onClick={() => signOut()}
                   className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
                 >
-                  Sign Out
+                  {t("signOut")}
                 </button>
               </>
             ) : (
@@ -80,10 +83,10 @@ export default function Header() {
                   href="/login"
                   className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
                 >
-                  Login
+                  {t("login")}
                 </Link>
                 <Link href="/register" className="btn-primary text-sm">
-                  Get Started
+                  {t("getStarted")}
                 </Link>
               </>
             )}

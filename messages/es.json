@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "title": "ReSight - Utilidad de juego para superposiciones de mira y configuración de pantalla",
+    "description": "ReSight es una utilidad de juego para superposiciones de mira, configuración de pantalla, control de volumen de Discord y perfiles de juego. Mejora tu experiencia de juego con potentes herramientas de personalización."
+  },
+  "header": {
+    "home": "Inicio",
+    "pricing": "Precios",
+    "dashboard": "Panel",
+    "login": "Iniciar sesión",
+    "signOut": "Cerrar sesión",
+    "getStarted": "Empezar"
+  },
+  "hero": {
+    "title1": "Apunta mejor.",
+    "title2": "Ve más.",
+    "subtitle": "Superposiciones de mira personalizadas, ajustes de pantalla para mapas oscuros y brillantes, y control de volumen de Discord. Todo en una aplicación.",
+    "getStarted": "Empezar",
+    "viewPricing": "Ver precios",
+    "joinDiscord": "Únete a Discord",
+    "withReSight": "Con ReSight",
+    "before": "Antes"
+  },
+  "features": {
+    "title": "Características",
+    "subtitle": "Todo funciona en tiempo real. Sin alt-tab. Sin reiniciar.",
+    "crosshair": {
+      "title": "Superposición de mira",
+      "description": "Miras personalizadas que funcionan en cualquier juego. Precisión al píxel con colores, tamaños y estilos que tú controlas."
+    },
+    "visual": {
+      "title": "Claridad visual",
+      "description": "¿Mapas oscuros demasiado oscuros? ¿Cielos brillantes ocultando enemigos? Ajusta brillo, contraste y gamma instantáneamente con teclas de acceso rápido."
+    },
+    "discord": {
+      "title": "Control de volumen de Discord",
+      "description": "Baja el volumen del chat de voz con una tecla de acceso rápido durante momentos cruciales. Concéntrate cuando más importa."
+    },
+    "profiles": {
+      "title": "Perfiles de juego",
+      "description": "Aplica automáticamente tu configuración cuando los juegos se inician. Diferentes ajustes para diferentes mapas o condiciones de iluminación."
+    }
+  },
+  "pricing": {
+    "title": "Precios simples",
+    "subtitle": "Compra única. Acceso de por vida. Sin suscripciones ni tarifas ocultas.",
+    "licenseName": "Licencia ReSight",
+    "oneTime": "único",
+    "features": {
+      "crosshair": "Personalización de mira ilimitada",
+      "display": "Configuración de pantalla avanzada",
+      "discord": "Control de volumen de Discord",
+      "profiles": "Perfiles de juego ilimitados",
+      "support": "Soporte prioritario"
+    },
+    "cta": "Obtén ReSight ahora",
+    "disclaimer": "ReSight está diseñado para mejorar tu experiencia de juego a través de una mayor claridad visual y funciones de conveniencia. Creemos en el juego limpio—esta herramienta no está destinada a proporcionar ventajas injustas. Por favor, úsala responsablemente y de acuerdo con los términos de servicio de cada juego. No somos responsables de las consecuencias derivadas del uso."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "¿Tienes preguntas? Tenemos respuestas. Encuentra lo que necesitas abajo.",
+    "items": {
+      "games": {
+        "question": "¿Con qué juegos funciona ReSight?",
+        "answer": "ReSight funciona con prácticamente cualquier juego. La superposición de mira se coloca sobre tu pantalla, por lo que es compatible con todos los juegos independientemente de si tienen opciones de mira integradas."
+      },
+      "anticheat": {
+        "question": "¿Es seguro usar ReSight con anti-trampas?",
+        "answer": "ReSight es una aplicación de superposición de pantalla que no se inyecta en los juegos ni modifica los archivos del juego. Sin embargo, siempre verifica los términos de servicio de tu juego ya que las políticas varían entre juegos y sistemas anti-trampas."
+      },
+      "computers": {
+        "question": "¿Puedo usar ReSight en múltiples computadoras?",
+        "answer": "Cada licencia se activa en una máquina. Si necesitas mover tu licencia a una nueva computadora, puedes contactar al soporte para que reinicien tu activación."
+      },
+      "discordVolume": {
+        "question": "¿Cómo funciona el control de volumen de Discord?",
+        "answer": "Presiona una tecla de acceso rápido para bajar instantáneamente el volumen del chat de voz de tus compañeros durante momentos intensos. Presiona de nuevo para restaurarlo. Ideal para situaciones cruciales donde necesitas concentrarte."
+      },
+      "offline": {
+        "question": "¿Necesito estar en línea para usar ReSight?",
+        "answer": "Después de la activación inicial, ReSight funciona completamente sin conexión. No se requiere conexión a internet para el uso diario."
+      },
+      "cost": {
+        "question": "¿Cuánto cuesta ReSight?",
+        "answer": "ReSight es una compra única de 3,99 € EUR. Esto incluye acceso de por vida a todas las funciones, actualizaciones ilimitadas y soporte prioritario. Sin suscripciones ni tarifas ocultas."
+      },
+      "displaySettings": {
+        "question": "¿Qué configuraciones de pantalla puedo ajustar con ReSight?",
+        "answer": "ReSight te permite ajustar brillo, contraste y gamma en tiempo real usando teclas de acceso rápido. Esto es especialmente útil para mapas oscuros en juegos como Hunt: Showdown o entornos brillantes en otros juegos."
+      }
+    }
+  },
+  "footer": {
+    "description": "Utilidad de juego para superposiciones de mira, configuración de pantalla, control de volumen de Discord y perfiles de juego. Mejora tu experiencia de juego con potentes herramientas de personalización.",
+    "product": "Producto",
+    "features": "Características",
+    "pricing": "Precios",
+    "dashboard": "Panel",
+    "account": "Cuenta",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "copyright": "ReSight. Todos los derechos reservados.",
+    "joinDiscord": "Únete a Discord"
+  },
+  "login": {
+    "title": "Bienvenido de nuevo",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "submit": "Iniciar sesión",
+    "submitting": "Iniciando sesión...",
+    "noAccount": "¿No tienes una cuenta?",
+    "createOne": "Crea una",
+    "errorInvalid": "Correo electrónico o contraseña inválidos",
+    "errorGeneric": "Ocurrió un error. Por favor, inténtalo de nuevo."
+  },
+  "register": {
+    "title": "Crear cuenta",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Al menos 8 caracteres",
+    "confirmPassword": "Confirmar contraseña",
+    "confirmPasswordPlaceholder": "Confirma tu contraseña",
+    "terms": "Acepto los términos de servicio y la política de privacidad",
+    "submit": "Crear cuenta",
+    "submitting": "Creando cuenta...",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Iniciar sesión",
+    "errorPasswordMismatch": "Las contraseñas no coinciden",
+    "errorTerms": "Debes aceptar los términos y condiciones",
+    "errorGeneric": "Ocurrió un error. Por favor, inténtalo de nuevo."
+  },
+  "buy": {
+    "title": "Obtén ReSight",
+    "subtitle": "Compra única. Acceso de por vida. Sin suscripciones ni tarifas ocultas.",
+    "canceledMessage": "Tu pago fue cancelado. Puedes intentarlo de nuevo cuando estés listo.",
+    "lifetimeLicense": "Licencia de por vida",
+    "licenseName": "Licencia ReSight",
+    "oneTimePayment": "Pago único",
+    "features": {
+      "crosshair": "Personalización de mira ilimitada",
+      "display": "Configuración de pantalla avanzada",
+      "discord": "Control de volumen de Discord",
+      "profiles": "Perfiles de juego ilimitados",
+      "support": "Soporte prioritario",
+      "machine": "Activación en una máquina",
+      "offline": "Uso sin conexión después de la activación"
+    },
+    "purchaseNow": "Comprar ahora",
+    "processing": "Procesando...",
+    "securePayment": "Pago seguro con Stripe",
+    "alreadyPurchased": "¿Ya compraste?",
+    "viewLicenses": "Ver tus licencias",
+    "disclaimer": "ReSight está diseñado para mejorar tu experiencia de juego a través de una mayor claridad visual y funciones de conveniencia. Creemos en el juego limpio—esta herramienta no está destinada a proporcionar ventajas injustas. Por favor, úsala responsablemente y de acuerdo con los términos de servicio de cada juego. No somos responsables de las consecuencias derivadas del uso."
+  },
+  "dashboard": {
+    "title": "Panel",
+    "subtitle": "Administra tus licencias ReSight y tu cuenta.",
+    "download": {
+      "title": "Descargar ReSight",
+      "securityNotice": "Aviso de seguridad de Windows",
+      "securityMessage": "Windows o tu antivirus pueden mostrar una advertencia porque el software no está firmado digitalmente. Esto es un falso positivo. ReSight es seguro de instalar. Haz clic en \"Más información\" y luego en \"Ejecutar de todos modos\" para proceder con la instalación."
+    },
+    "account": {
+      "title": "Cuenta",
+      "loggedInAs": "Conectado como"
+    },
+    "licenses": {
+      "title": "Tus licencias",
+      "purchaseButton": "Comprar licencia",
+      "noLicenses": "Aún no tienes licencias.",
+      "purchaseReSight": "Comprar ReSight",
+      "activatedOn": "Activado el",
+      "notActivated": "Aún no activado",
+      "machine": "Máquina:",
+      "purchased": "Comprado"
+    }
+  },
+  "success": {
+    "title": "¡Gracias por tu compra!",
+    "subtitle": "Tu licencia ReSight ha sido creada. Copia la clave de licencia a continuación y úsala para activar la aplicación.",
+    "licenseKey": "Tu clave de licencia",
+    "emailSent": "También se ha enviado una copia a",
+    "processingMessage": "Tu pago está siendo procesado. Revisa tu correo electrónico para obtener tu clave de licencia, o visita tu panel.",
+    "errorCheckEmail": "Si completaste tu compra, revisa tu correo electrónico o",
+    "viewDashboard": "ve tu panel",
+    "downloadButton": "Descargar ReSight",
+    "dashboardButton": "Ver panel",
+    "retrievingLicense": "Obteniendo tu licencia..."
+  },
+  "localeSwitcher": {
+    "label": "Idioma"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error"
+  }
+}

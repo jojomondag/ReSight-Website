@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/i18n/navigation";
 
 const games = [
   {
@@ -21,14 +22,15 @@ const games = [
   },
 ];
 
-// Flat array of all images for navigation
-const allImages = games.flatMap((game) => [
-  { src: game.images.after, label: `${game.name} - With ReSight` },
-  { src: game.images.before, label: `${game.name} - Before` },
-]);
-
 export default function Hero() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const t = useTranslations("hero");
+
+  // Flat array of all images for navigation
+  const allImages = games.flatMap((game) => [
+    { src: game.images.after, label: `${game.name} - ${t("withReSight")}` },
+    { src: game.images.before, label: `${game.name} - ${t("before")}` },
+  ]);
 
   const openLightbox = (imageSrc: string) => {
     const index = allImages.findIndex((img) => img.src === imageSrc);
@@ -39,13 +41,17 @@ export default function Hero() {
 
   const goToPrevious = useCallback(() => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => (prev === null ? null : (prev - 1 + allImages.length) % allImages.length));
-  }, [lightboxIndex]);
+    setLightboxIndex((prev) =>
+      prev === null ? null : (prev - 1 + allImages.length) % allImages.length
+    );
+  }, [lightboxIndex, allImages.length]);
 
   const goToNext = useCallback(() => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => (prev === null ? null : (prev + 1) % allImages.length));
-  }, [lightboxIndex]);
+    setLightboxIndex((prev) =>
+      prev === null ? null : (prev + 1) % allImages.length
+    );
+  }, [lightboxIndex, allImages.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -66,7 +72,10 @@ export default function Hero() {
       className="relative overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary opacity-50" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary opacity-50"
+        aria-hidden="true"
+      />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <header className="text-center">
           {/* Speakable content for voice search */}
@@ -75,29 +84,32 @@ export default function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6"
             data-speakable="true"
           >
-            Aim Better.
-            <span className="block text-accent">See More.</span>
+            {t("title1")}
+            <span className="block text-accent">{t("title2")}</span>
           </h1>
           <p
             className="text-xl text-text-secondary max-w-2xl mx-auto mb-10"
             data-speakable="true"
           >
-            Custom crosshair overlays, display adjustments for dark and bright maps, and Discord volume control. All in one app.
+            {t("subtitle")}
           </p>
-          <nav className="flex flex-col sm:flex-row gap-4 justify-center" aria-label="Primary actions">
+          <nav
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            aria-label="Primary actions"
+          >
             <Link
               href="/register"
               className="btn-primary text-lg px-8 py-4"
-              aria-label="Get started with ReSight - Create your account"
+              aria-label={t("getStarted")}
             >
-              Get Started
+              {t("getStarted")}
             </Link>
             <Link
               href="/buy"
               className="btn-secondary text-lg px-8 py-4"
-              aria-label="View ReSight pricing - $5 one-time purchase"
+              aria-label={t("viewPricing")}
             >
-              View Pricing
+              {t("viewPricing")}
             </Link>
           </nav>
           <div className="flex justify-center mt-4">
@@ -106,7 +118,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-lg px-8 py-4 flex items-center gap-2 hover:text-accent transition-colors"
-              aria-label="Join our Discord community"
+              aria-label={t("joinDiscord")}
             >
               <svg
                 className="w-5 h-5"
@@ -116,7 +128,7 @@ export default function Hero() {
               >
                 <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
               </svg>
-              <span>Join our Discord</span>
+              <span>{t("joinDiscord")}</span>
             </a>
           </div>
         </header>
@@ -146,7 +158,7 @@ export default function Hero() {
                     priority
                   />
                   <span className="absolute top-3 left-3 bg-accent/90 text-bg-primary text-xs px-2 py-1 rounded font-medium">
-                    With ReSight
+                    {t("withReSight")}
                   </span>
                 </button>
                 <button
@@ -162,7 +174,7 @@ export default function Hero() {
                     className="w-full h-auto"
                   />
                   <span className="absolute top-3 left-3 bg-bg-primary/80 text-text-secondary text-xs px-2 py-1 rounded">
-                    Before
+                    {t("before")}
                   </span>
                 </button>
               </article>
@@ -186,11 +198,14 @@ export default function Hero() {
             onClick={closeLightbox}
             aria-label="Close lightbox"
           >
-            ×
+            &times;
           </button>
 
           {/* Image with navigation */}
-          <div className="relative flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative flex flex-col items-center gap-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="relative">
               <Image
                 src={allImages[lightboxIndex].src}
@@ -205,7 +220,7 @@ export default function Hero() {
                 onClick={goToPrevious}
                 aria-label="Previous image"
               >
-                ‹
+                &lsaquo;
               </button>
               {/* Next arrow */}
               <button
@@ -213,10 +228,12 @@ export default function Hero() {
                 onClick={goToNext}
                 aria-label="Next image"
               >
-                ›
+                &rsaquo;
               </button>
             </div>
-            <span className="text-white/80 text-sm">{allImages[lightboxIndex].label}</span>
+            <span className="text-white/80 text-sm">
+              {allImages[lightboxIndex].label}
+            </span>
           </div>
 
           {/* Image counter */}

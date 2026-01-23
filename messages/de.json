@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "title": "ReSight - Gaming-Tool für Fadenkreuz-Overlays und Display-Einstellungen",
+    "description": "ReSight ist ein Gaming-Tool für Fadenkreuz-Overlays, Display-Einstellungen, Discord-Lautstärkeregelung und Spielprofile. Verbessere dein Spielerlebnis mit leistungsstarken Anpassungstools."
+  },
+  "header": {
+    "home": "Startseite",
+    "pricing": "Preise",
+    "dashboard": "Dashboard",
+    "login": "Anmelden",
+    "signOut": "Abmelden",
+    "getStarted": "Loslegen"
+  },
+  "hero": {
+    "title1": "Besser zielen.",
+    "title2": "Mehr sehen.",
+    "subtitle": "Individuelle Fadenkreuz-Overlays, Display-Anpassungen für dunkle und helle Karten, und Discord-Lautstärkeregelung. Alles in einer App.",
+    "getStarted": "Loslegen",
+    "viewPricing": "Preise ansehen",
+    "joinDiscord": "Discord beitreten",
+    "withReSight": "Mit ReSight",
+    "before": "Vorher"
+  },
+  "features": {
+    "title": "Funktionen",
+    "subtitle": "Alles läuft in Echtzeit. Kein Alt-Tab. Kein Neustart.",
+    "crosshair": {
+      "title": "Fadenkreuz-Overlay",
+      "description": "Individuelle Fadenkreuze, die in jedem Spiel funktionieren. Pixelgenaue Präzision mit Farben, Größen und Stilen, die du kontrollierst."
+    },
+    "visual": {
+      "title": "Visuelle Klarheit",
+      "description": "Dunkle Karten zu dunkel? Heller Himmel blendet Feinde aus? Passe Helligkeit, Kontrast und Gamma sofort per Hotkey an."
+    },
+    "discord": {
+      "title": "Discord-Lautstärkeregelung",
+      "description": "Senke die Voice-Chat-Lautstärke mit einem Hotkey in entscheidenden Momenten. Fokussiere dich, wenn es darauf ankommt."
+    },
+    "profiles": {
+      "title": "Spielprofile",
+      "description": "Wende deine Einstellungen automatisch an, wenn Spiele starten. Verschiedene Voreinstellungen für verschiedene Karten oder Lichtverhältnisse."
+    }
+  },
+  "pricing": {
+    "title": "Einfache Preisgestaltung",
+    "subtitle": "Einmaliger Kauf. Lebenslanger Zugang. Keine Abonnements oder versteckten Gebühren.",
+    "licenseName": "ReSight-Lizenz",
+    "oneTime": "einmalig",
+    "features": {
+      "crosshair": "Unbegrenzte Fadenkreuz-Anpassung",
+      "display": "Erweiterte Display-Einstellungen",
+      "discord": "Discord-Lautstärkeregelung",
+      "profiles": "Unbegrenzte Spielprofile",
+      "support": "Prioritäts-Support"
+    },
+    "cta": "ReSight jetzt holen",
+    "disclaimer": "ReSight wurde entwickelt, um dein Spielerlebnis durch verbesserte visuelle Klarheit und Komfortfunktionen zu verbessern. Wir glauben an faires Spiel—dieses Tool ist nicht dazu gedacht, unfaire Vorteile zu bieten. Bitte nutze es verantwortungsvoll und in Übereinstimmung mit den Nutzungsbedingungen jedes Spiels. Wir haften nicht für etwaige Konsequenzen aus der Nutzung."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Hast du Fragen? Wir haben Antworten. Finde unten, was du brauchst.",
+    "items": {
+      "games": {
+        "question": "Mit welchen Spielen funktioniert ReSight?",
+        "answer": "ReSight funktioniert mit praktisch jedem Spiel. Das Fadenkreuz-Overlay liegt über deinem Bildschirm und ist daher mit allen Spielen kompatibel, unabhängig davon, ob sie eingebaute Fadenkreuz-Optionen haben."
+      },
+      "anticheat": {
+        "question": "Ist ReSight sicher mit Anti-Cheat zu verwenden?",
+        "answer": "ReSight ist eine Bildschirm-Overlay-Anwendung, die nicht in Spiele injiziert oder Spieldateien modifiziert. Überprüfe jedoch immer die Nutzungsbedingungen deines Spiels, da die Richtlinien zwischen Spielen und Anti-Cheat-Systemen variieren."
+      },
+      "computers": {
+        "question": "Kann ich ReSight auf mehreren Computern verwenden?",
+        "answer": "Jede Lizenz wird auf einem Gerät aktiviert. Wenn du deine Lizenz auf einen neuen Computer übertragen musst, kannst du den Support kontaktieren, um deine Aktivierung zurückzusetzen."
+      },
+      "discordVolume": {
+        "question": "Wie funktioniert die Discord-Lautstärkeregelung?",
+        "answer": "Drücke einen Hotkey, um die Voice-Chat-Lautstärke deiner Teamkollegen in intensiven Momenten sofort zu senken. Drücke erneut, um sie wiederherzustellen. Ideal für Clutch-Situationen, in denen du dich konzentrieren musst."
+      },
+      "offline": {
+        "question": "Muss ich online sein, um ReSight zu nutzen?",
+        "answer": "Nach der ersten Aktivierung funktioniert ReSight vollständig offline. Für die tägliche Nutzung ist keine Internetverbindung erforderlich."
+      },
+      "cost": {
+        "question": "Wie viel kostet ReSight?",
+        "answer": "ReSight ist ein einmaliger Kauf für 3,99 € EUR. Dies beinhaltet lebenslangen Zugang zu allen Funktionen, unbegrenzte Updates und Prioritäts-Support. Keine Abonnements oder versteckten Gebühren."
+      },
+      "displaySettings": {
+        "question": "Welche Display-Einstellungen kann ich mit ReSight anpassen?",
+        "answer": "ReSight ermöglicht es dir, Helligkeit, Kontrast und Gamma in Echtzeit per Hotkey anzupassen. Dies ist besonders nützlich für dunkle Karten in Spielen wie Hunt: Showdown oder helle Umgebungen in anderen Spielen."
+      }
+    }
+  },
+  "footer": {
+    "description": "Gaming-Tool für Fadenkreuz-Overlays, Display-Einstellungen, Discord-Lautstärkeregelung und Spielprofile. Verbessere dein Spielerlebnis mit leistungsstarken Anpassungstools.",
+    "product": "Produkt",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "dashboard": "Dashboard",
+    "account": "Konto",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "copyright": "ReSight. Alle Rechte vorbehalten.",
+    "joinDiscord": "Discord beitreten"
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "email": "E-Mail",
+    "emailPlaceholder": "du@beispiel.com",
+    "password": "Passwort",
+    "passwordPlaceholder": "Gib dein Passwort ein",
+    "submit": "Anmelden",
+    "submitting": "Anmeldung läuft...",
+    "noAccount": "Noch kein Konto?",
+    "createOne": "Erstelle eins",
+    "errorInvalid": "Ungültige E-Mail oder Passwort",
+    "errorGeneric": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+  },
+  "register": {
+    "title": "Konto erstellen",
+    "email": "E-Mail",
+    "emailPlaceholder": "du@beispiel.com",
+    "password": "Passwort",
+    "passwordPlaceholder": "Mindestens 8 Zeichen",
+    "confirmPassword": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Bestätige dein Passwort",
+    "terms": "Ich stimme den Nutzungsbedingungen und der Datenschutzrichtlinie zu",
+    "submit": "Konto erstellen",
+    "submitting": "Konto wird erstellt...",
+    "hasAccount": "Hast du bereits ein Konto?",
+    "signIn": "Anmelden",
+    "errorPasswordMismatch": "Passwörter stimmen nicht überein",
+    "errorTerms": "Du musst die Nutzungsbedingungen akzeptieren",
+    "errorGeneric": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+  },
+  "buy": {
+    "title": "ReSight holen",
+    "subtitle": "Einmaliger Kauf. Lebenslanger Zugang. Keine Abonnements oder versteckten Gebühren.",
+    "canceledMessage": "Deine Zahlung wurde abgebrochen. Du kannst es jederzeit erneut versuchen.",
+    "lifetimeLicense": "Lebenslange Lizenz",
+    "licenseName": "ReSight-Lizenz",
+    "oneTimePayment": "Einmalzahlung",
+    "features": {
+      "crosshair": "Unbegrenzte Fadenkreuz-Anpassung",
+      "display": "Erweiterte Display-Einstellungen",
+      "discord": "Discord-Lautstärkeregelung",
+      "profiles": "Unbegrenzte Spielprofile",
+      "support": "Prioritäts-Support",
+      "machine": "Aktivierung auf einem Gerät",
+      "offline": "Offline-Nutzung nach Aktivierung"
+    },
+    "purchaseNow": "Jetzt kaufen",
+    "processing": "Wird verarbeitet...",
+    "securePayment": "Sichere Zahlung über Stripe",
+    "alreadyPurchased": "Bereits gekauft?",
+    "viewLicenses": "Deine Lizenzen ansehen",
+    "disclaimer": "ReSight wurde entwickelt, um dein Spielerlebnis durch verbesserte visuelle Klarheit und Komfortfunktionen zu verbessern. Wir glauben an faires Spiel—dieses Tool ist nicht dazu gedacht, unfaire Vorteile zu bieten. Bitte nutze es verantwortungsvoll und in Übereinstimmung mit den Nutzungsbedingungen jedes Spiels. Wir haften nicht für etwaige Konsequenzen aus der Nutzung."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Verwalte deine ReSight-Lizenzen und dein Konto.",
+    "download": {
+      "title": "ReSight herunterladen",
+      "securityNotice": "Windows-Sicherheitshinweis",
+      "securityMessage": "Windows oder dein Antivirusprogramm kann eine Warnung anzeigen, weil die Software nicht codesigniert ist. Dies ist ein Fehlalarm. ReSight ist sicher zu installieren. Klicke auf \"Weitere Informationen\" und dann \"Trotzdem ausführen\", um mit der Installation fortzufahren."
+    },
+    "account": {
+      "title": "Konto",
+      "loggedInAs": "Angemeldet als"
+    },
+    "licenses": {
+      "title": "Deine Lizenzen",
+      "purchaseButton": "Lizenz kaufen",
+      "noLicenses": "Du hast noch keine Lizenzen.",
+      "purchaseReSight": "ReSight kaufen",
+      "activatedOn": "Aktiviert am",
+      "notActivated": "Noch nicht aktiviert",
+      "machine": "Gerät:",
+      "purchased": "Gekauft"
+    }
+  },
+  "success": {
+    "title": "Vielen Dank für deinen Kauf!",
+    "subtitle": "Deine ReSight-Lizenz wurde erstellt. Kopiere den Lizenzschlüssel unten und verwende ihn, um die App zu aktivieren.",
+    "licenseKey": "Dein Lizenzschlüssel",
+    "emailSent": "Eine Kopie wurde auch gesendet an",
+    "processingMessage": "Deine Zahlung wird verarbeitet. Überprüfe deine E-Mail auf deinen Lizenzschlüssel oder besuche dein Dashboard.",
+    "errorCheckEmail": "Wenn du deinen Kauf abgeschlossen hast, überprüfe deine E-Mail oder",
+    "viewDashboard": "sieh dein Dashboard an",
+    "downloadButton": "ReSight herunterladen",
+    "dashboardButton": "Dashboard ansehen",
+    "retrievingLicense": "Deine Lizenz wird abgerufen..."
+  },
+  "localeSwitcher": {
+    "label": "Sprache"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler"
+  }
+}

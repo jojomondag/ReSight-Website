@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "title": "ReSight - Gaming Utility for Crosshair Overlays & Display Settings",
+    "description": "ReSight is a gaming utility for crosshair overlays, display settings, Discord volume control, and gaming profiles. Enhance your gaming experience with powerful customization tools."
+  },
+  "header": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "signOut": "Sign Out",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title1": "Aim Better.",
+    "title2": "See More.",
+    "subtitle": "Custom crosshair overlays, display adjustments for dark and bright maps, and Discord volume control. All in one app.",
+    "getStarted": "Get Started",
+    "viewPricing": "View Pricing",
+    "joinDiscord": "Join our Discord",
+    "withReSight": "With ReSight",
+    "before": "Before"
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything runs in real-time. No alt-tabbing. No restarting.",
+    "crosshair": {
+      "title": "Crosshair Overlay",
+      "description": "Custom crosshairs that work in any game. Pixel-perfect precision with colors, sizes, and styles you control."
+    },
+    "visual": {
+      "title": "Visual Clarity",
+      "description": "Dark maps too dark? Bright skies washing out enemies? Adjust brightness, contrast & gamma instantly with hotkeys."
+    },
+    "discord": {
+      "title": "Discord Volume Control",
+      "description": "Lower voice chat volume with a hotkey during clutch moments. Focus when it matters most."
+    },
+    "profiles": {
+      "title": "Game Profiles",
+      "description": "Auto-apply your settings when games launch. Different presets for different maps or lighting conditions."
+    }
+  },
+  "pricing": {
+    "title": "Simple Pricing",
+    "subtitle": "One-time purchase. Lifetime access. No subscriptions or hidden fees.",
+    "licenseName": "ReSight License",
+    "oneTime": "one-time",
+    "features": {
+      "crosshair": "Unlimited crosshair customization",
+      "display": "Advanced display settings",
+      "discord": "Discord volume control",
+      "profiles": "Unlimited gaming profiles",
+      "support": "Priority support"
+    },
+    "cta": "Get ReSight Now",
+    "disclaimer": "ReSight is designed to enhance your gaming experience through improved visual clarity and convenience features. We believe in fair play—this tool is not intended to provide unfair advantages. Please use responsibly and in accordance with each game's terms of service. We are not liable for any consequences resulting from use."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? We've got answers. Find what you need below.",
+    "items": {
+      "games": {
+        "question": "What games does ReSight work with?",
+        "answer": "ReSight works with virtually any game. The crosshair overlay sits on top of your screen, so it's compatible with all games regardless of whether they have built-in crosshair options."
+      },
+      "anticheat": {
+        "question": "Is ReSight safe to use with anti-cheat?",
+        "answer": "ReSight is a screen overlay application that doesn't inject into games or modify game files. However, always check your game's terms of service as policies vary between games and anti-cheat systems."
+      },
+      "computers": {
+        "question": "Can I use ReSight on multiple computers?",
+        "answer": "Each license is activated on one machine. If you need to move your license to a new computer, you can contact support to have your activation reset."
+      },
+      "discordVolume": {
+        "question": "How does Discord volume control work?",
+        "answer": "Press a hotkey to instantly lower your teammates' voice chat volume during intense moments. Press again to restore it. Great for clutch situations where you need to focus."
+      },
+      "offline": {
+        "question": "Do I need to be online to use ReSight?",
+        "answer": "After initial activation, ReSight works completely offline. No internet connection is required for day-to-day use."
+      },
+      "cost": {
+        "question": "How much does ReSight cost?",
+        "answer": "ReSight is a one-time purchase of $4.30 USD. This includes lifetime access to all features, unlimited updates, and priority support. No subscriptions or hidden fees."
+      },
+      "displaySettings": {
+        "question": "What display settings can I adjust with ReSight?",
+        "answer": "ReSight allows you to adjust brightness, contrast, and gamma in real-time using hotkeys. This is especially useful for dark maps in games like Hunt: Showdown or bright environments in other games."
+      }
+    }
+  },
+  "footer": {
+    "description": "Gaming utility for crosshair overlays, display settings, Discord volume control, and gaming profiles. Enhance your gaming experience with powerful customization tools.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "account": "Account",
+    "login": "Login",
+    "register": "Register",
+    "copyright": "ReSight. All rights reserved.",
+    "joinDiscord": "Join our Discord"
+  },
+  "login": {
+    "title": "Welcome Back",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Sign In",
+    "submitting": "Signing in...",
+    "noAccount": "Don't have an account?",
+    "createOne": "Create one",
+    "errorInvalid": "Invalid email or password",
+    "errorGeneric": "An error occurred. Please try again."
+  },
+  "register": {
+    "title": "Create Account",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "At least 8 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "terms": "I agree to the terms of service and privacy policy",
+    "submit": "Create Account",
+    "submitting": "Creating account...",
+    "hasAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "errorPasswordMismatch": "Passwords do not match",
+    "errorTerms": "You must accept the terms and conditions",
+    "errorGeneric": "An error occurred. Please try again."
+  },
+  "buy": {
+    "title": "Get ReSight",
+    "subtitle": "One-time purchase. Lifetime access. No subscriptions or hidden fees.",
+    "canceledMessage": "Your payment was canceled. You can try again whenever you're ready.",
+    "lifetimeLicense": "Lifetime License",
+    "licenseName": "ReSight License",
+    "oneTimePayment": "One-time payment",
+    "features": {
+      "crosshair": "Unlimited crosshair customization",
+      "display": "Advanced display settings",
+      "discord": "Discord volume control",
+      "profiles": "Unlimited gaming profiles",
+      "support": "Priority support",
+      "machine": "One machine activation",
+      "offline": "Offline use after activation"
+    },
+    "purchaseNow": "Purchase Now",
+    "processing": "Processing...",
+    "securePayment": "Secure payment powered by Stripe",
+    "alreadyPurchased": "Already purchased?",
+    "viewLicenses": "View your licenses",
+    "disclaimer": "ReSight is designed to enhance your gaming experience through improved visual clarity and convenience features. We believe in fair play—this tool is not intended to provide unfair advantages. Please use responsibly and in accordance with each game's terms of service. We are not liable for any consequences resulting from use."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Manage your ReSight licenses and account.",
+    "download": {
+      "title": "Download ReSight",
+      "securityNotice": "Windows Security Notice",
+      "securityMessage": "Windows or your antivirus may show a warning because the software is not code-signed. This is a false positive. ReSight is safe to install. Click \"More info\" then \"Run anyway\" to proceed with the installation."
+    },
+    "account": {
+      "title": "Account",
+      "loggedInAs": "Logged in as"
+    },
+    "licenses": {
+      "title": "Your Licenses",
+      "purchaseButton": "Purchase License",
+      "noLicenses": "You don't have any licenses yet.",
+      "purchaseReSight": "Purchase ReSight",
+      "activatedOn": "Activated on",
+      "notActivated": "Not yet activated",
+      "machine": "Machine:",
+      "purchased": "Purchased"
+    }
+  },
+  "success": {
+    "title": "Thank You for Your Purchase!",
+    "subtitle": "Your ReSight license has been created. Copy the license key below and use it to activate the app.",
+    "licenseKey": "Your License Key",
+    "emailSent": "A copy has also been sent to",
+    "processingMessage": "Your payment is being processed. Check your email for your license key, or visit your dashboard.",
+    "errorCheckEmail": "If you completed your purchase, check your email or",
+    "viewDashboard": "view your dashboard",
+    "downloadButton": "Download ReSight",
+    "dashboardButton": "View Dashboard",
+    "retrievingLicense": "Retrieving your license..."
+  },
+  "localeSwitcher": {
+    "label": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
+  }
+}
