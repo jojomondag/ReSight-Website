@@ -135,7 +135,23 @@ export default function RegisterPage() {
                 className="mt-1 w-4 h-4 accent-accent"
               />
               <label htmlFor="terms" className="text-sm text-text-secondary">
-                {t("terms")}
+                {t("termsPrefix")}
+                <Link
+                  href="/terms"
+                  className="text-accent hover:text-accent-light transition-colors"
+                  target="_blank"
+                >
+                  {t("termsLink")}
+                </Link>
+                {t("termsAnd")}
+                <Link
+                  href="/privacy"
+                  className="text-accent hover:text-accent-light transition-colors"
+                  target="_blank"
+                >
+                  {t("privacyLink")}
+                </Link>
+                {t.has("termsSuffix") ? t("termsSuffix") : ""}
               </label>
             </div>
 
