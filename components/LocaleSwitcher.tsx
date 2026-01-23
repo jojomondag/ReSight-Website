@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useTransition } from "react";
+import { useState, useRef, useEffect, useTransition } from "react";
 import { useRouter, usePathname } from "@/lib/i18n/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 
@@ -18,28 +18,68 @@ export default function LocaleSwitcher() {
   const pathname = usePathname();
   const params = useParams();
   const [isPending, startTransition] = useTransition();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const currentLocale = params.locale as Locale;
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value as Locale;
-    startTransition(() => {
-      router.replace(pathname, { locale: newLocale });
-    });
+  const handleSelect = (newLocale: Locale) => {
+    setIsOpen(false);
+    if (newLocale !== currentLocale) {
+      startTransition(() => {
+        router.replace(pathname, { locale: newLocale });
+      });
+    }
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <select
-      value={currentLocale}
-      onChange={handleChange}
-      disabled={isPending}
-      className="bg-transparent border-none text-text-secondary text-xs font-medium cursor-pointer disabled:opacity-50 focus:outline-none focus:text-text-primary hover:text-text-primary transition-colors appearance-none pr-4 bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%20width%3d%2212%22%20height%3d%2212%22%20viewBox%3d%220%200%2012%2012%22%3e%3cpath%20fill%3d%22%2389986D%22%20d%3d%22M2%204l4%204%204-4%22%2f%3e%3c%2fsvg%3e')] bg-no-repeat bg-right"
-      aria-label="Select language"
-    >
-      {locales.map((locale) => (
-        <option key={locale} value={locale}>
-          {localeLabels[locale]}
-        </option>
-      ))}
-    </select>
+    <div className="relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        disabled={isPending}
+        className="flex items-center gap-1 text-text-secondary text-xs font-medium hover:text-text-primary transition-colors disabled:opacity-50"
+        aria-label="Select language"
+        aria-expanded={isOpen}
+      >
+        <span>{localeLabels[currentLocale]}</span>
+        <svg
+          className={`w-3 h-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <div className="absolute right-0 mt-2 py-1 bg-bg-secondary border border-border rounded-lg shadow-lg z-50 min-w-[80px] animate-fade-in">
+          {locales.map((locale) => (
+            <button
+              key={locale}
+              onClick={() => handleSelect(locale)}
+              className={`w-full px-3 py-1.5 text-left text-xs font-medium transition-colors ${
+                locale === currentLocale
+                  ? "text-accent bg-bg-tertiary"
+                  : "text-text-secondary hover:text-text-primary hover:bg-bg-tertiary"
+              }`}
+            >
+              {localeLabels[locale]}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
