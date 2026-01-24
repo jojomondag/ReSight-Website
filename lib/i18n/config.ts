@@ -28,15 +28,6 @@ export const localeCurrency: Record<Locale, string> = {
   fr: "EUR",
 };
 
-// Price display per locale
-export const localePrice: Record<Locale, { amount: string; formatted: string }> = {
-  en: { amount: "4.30", formatted: "$4.30" },
-  sv: { amount: "49", formatted: "49 kr" },
-  de: { amount: "3.99", formatted: "3,99 €" },
-  es: { amount: "3.99", formatted: "3,99 €" },
-  fr: { amount: "3.99", formatted: "3,99 €" },
-};
-
 // OpenGraph locale format
 export const ogLocale: Record<Locale, string> = {
   en: "en_US",

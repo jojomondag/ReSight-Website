@@ -4,13 +4,17 @@ import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { Link } from "@/lib/i18n/navigation";
 import { ProductJsonLd } from "./JsonLd";
-import { localePrice, localeCurrency, type Locale } from "@/lib/i18n/config";
+import { localeCurrency, type Locale } from "@/lib/i18n/config";
+import type { PriceInfo } from "@/lib/stripe-prices";
 
-export default function Pricing() {
+interface PricingProps {
+  price: PriceInfo;
+}
+
+export default function Pricing({ price }: PricingProps) {
   const t = useTranslations("pricing");
   const params = useParams();
   const locale = (params.locale as Locale) || "en";
-  const price = localePrice[locale] || localePrice.en;
   const currency = localeCurrency[locale] || "USD";
 
   const features = [
@@ -24,7 +28,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-24" aria-labelledby="pricing-heading">
       {/* Product Schema for Rich Snippets */}
-      <ProductJsonLd locale={locale} />
+      <ProductJsonLd locale={locale} price={price} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

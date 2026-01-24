@@ -3,10 +3,12 @@
  * Provides schema.org markup for SEO, AEO, and GEO optimization
  */
 
-import { localePrice, localeCurrency, locales, type Locale } from "@/lib/i18n/config";
+import { localeCurrency, locales, type Locale } from "@/lib/i18n/config";
+import type { PriceInfo } from "@/lib/stripe-prices";
 
 interface JsonLdProps {
   locale?: string;
+  price?: PriceInfo;
 }
 
 // Organization Schema - For Google Knowledge Panel
@@ -70,10 +72,19 @@ export function WebSiteJsonLd({ locale = "en" }: JsonLdProps) {
   );
 }
 
+// Fallback prices for when dynamic price is not available
+const fallbackPrices: Record<Locale, PriceInfo> = {
+  en: { amount: "4.30", formatted: "$4.30" },
+  sv: { amount: "49", formatted: "49 kr" },
+  de: { amount: "3.99", formatted: "3,99 €" },
+  es: { amount: "3.99", formatted: "3,99 €" },
+  fr: { amount: "3.99", formatted: "3,99 €" },
+};
+
 // SoftwareApplication Schema - For Product Rich Results
-export function SoftwareJsonLd({ locale = "en" }: JsonLdProps) {
+export function SoftwareJsonLd({ locale = "en", price: priceProp }: JsonLdProps) {
   const loc = locale as Locale;
-  const price = localePrice[loc] || localePrice.en;
+  const price = priceProp || fallbackPrices[loc] || fallbackPrices.en;
   const currency = localeCurrency[loc] || "USD";
 
   const schema = {
@@ -175,9 +186,9 @@ export function FAQJsonLd({
 }
 
 // Product Schema - For E-commerce Rich Results
-export function ProductJsonLd({ locale = "en" }: JsonLdProps) {
+export function ProductJsonLd({ locale = "en", price: priceProp }: JsonLdProps) {
   const loc = locale as Locale;
-  const price = localePrice[loc] || localePrice.en;
+  const price = priceProp || fallbackPrices[loc] || fallbackPrices.en;
   const currency = localeCurrency[loc] || "USD";
 
   const schema = {
@@ -220,12 +231,12 @@ export function ProductJsonLd({ locale = "en" }: JsonLdProps) {
 }
 
 // Combined default export for homepage
-export default function JsonLd({ locale = "en" }: JsonLdProps) {
+export default function JsonLd({ locale = "en", price }: JsonLdProps) {
   return (
     <>
       <OrganizationJsonLd />
       <WebSiteJsonLd locale={locale} />
-      <SoftwareJsonLd locale={locale} />
+      <SoftwareJsonLd locale={locale} price={price} />
     </>
   );
 }
