@@ -80,7 +80,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <button
-                      onClick={() => signOut()}
+                      onClick={() => signOut({ callbackUrl: "/" })}
                       className="text-text-secondary hover:text-text-primary text-sm transition-colors"
                     >
                       {t("signOut")}

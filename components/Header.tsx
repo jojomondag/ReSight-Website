@@ -70,7 +70,7 @@ export default function Header() {
                   {session.user?.email}
                 </span>
                 <button
-                  onClick={() => signOut()}
+                  onClick={() => signOut({ callbackUrl: "/" })}
                   className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
                 >
                   {t("signOut")}
