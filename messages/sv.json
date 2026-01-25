@@ -70,7 +70,7 @@
       },
       "computers": {
         "question": "Kan jag använda ReSight på flera datorer?",
-        "answer": "Varje licens aktiveras på en maskin. Om du behöver flytta din licens till en ny dator kan du kontakta support för att återställa din aktivering."
+        "answer": "Varje licens aktiveras på en maskin. Om du behöver flytta din licens till en ny dator kan du kontakta support för att återställa din aktivering. För supportfrågor kan du också skriva till admins i vår Discord."
       },
       "discordVolume": {
         "question": "Hur fungerar Discord-volymkontrollen?",

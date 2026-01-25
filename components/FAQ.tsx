@@ -7,6 +7,8 @@ import { FAQJsonLd } from "./JsonLd";
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const t = useTranslations("faq");
+  const tFooter = useTranslations("footer");
+  const discordUrl = "https://discord.gg/AZJ9AA9S";
 
   const faqKeys = [
     "games",
@@ -19,6 +21,7 @@ export default function FAQ() {
   ] as const;
 
   const faqs = faqKeys.map((key) => ({
+    key,
     question: t(`items.${key}.question`),
     answer: t(`items.${key}.answer`),
   }));
@@ -30,7 +33,12 @@ export default function FAQ() {
       aria-labelledby="faq-heading"
     >
       {/* FAQ Schema for Rich Snippets */}
-      <FAQJsonLd faqs={faqs} />
+      <FAQJsonLd
+        faqs={faqs.map((faq) => ({
+          question: faq.question,
+          answer: faq.answer,
+        }))}
+      />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -92,6 +100,19 @@ export default function FAQ() {
               >
                 <p className="text-text-secondary" itemProp="text">
                   {faq.answer}
+                  {faq.key === "computers" ? (
+                    <>
+                      {" "}
+                      <a
+                        href={discordUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:opacity-80"
+                      >
+                        {tFooter("joinDiscord")}
+                      </a>
+                    </>
+                  ) : null}
                 </p>
               </div>
             </article>
