@@ -80,10 +80,6 @@
         "question": "Do I need to be online to use ReSight?",
         "answer": "After initial activation, ReSight works completely offline. No internet connection is required for day-to-day use."
       },
-      "cost": {
-        "question": "How much does ReSight cost?",
-        "answer": "ReSight is a one-time purchase of $4.30 USD. This includes lifetime access to all features, unlimited updates, and priority support. No subscriptions or hidden fees."
-      },
       "displaySettings": {
         "question": "What display settings can I adjust with ReSight?",
         "answer": "ReSight allows you to adjust brightness, contrast, and gamma in real-time using hotkeys. This is especially useful for dark maps in games like Hunt: Showdown or bright environments in other games."

@@ -80,10 +80,6 @@
         "question": "Dois-je être en ligne pour utiliser ReSight ?",
         "answer": "Après l'activation initiale, ReSight fonctionne complètement hors ligne. Aucune connexion Internet n'est requise pour une utilisation quotidienne."
       },
-      "cost": {
-        "question": "Combien coûte ReSight ?",
-        "answer": "ReSight est un achat unique de 3,99 € EUR. Cela inclut un accès à vie à toutes les fonctionnalités, des mises à jour illimitées et un support prioritaire. Pas d'abonnements ni de frais cachés."
-      },
       "displaySettings": {
         "question": "Quels paramètres d'affichage puis-je ajuster avec ReSight ?",
         "answer": "ReSight vous permet d'ajuster la luminosité, le contraste et le gamma en temps réel à l'aide de raccourcis clavier. C'est particulièrement utile pour les cartes sombres dans des jeux comme Hunt: Showdown ou les environnements lumineux dans d'autres jeux."

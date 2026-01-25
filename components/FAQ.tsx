@@ -16,7 +16,6 @@ export default function FAQ() {
     "computers",
     "discordVolume",
     "offline",
-    "cost",
     "displaySettings",
   ] as const;
 

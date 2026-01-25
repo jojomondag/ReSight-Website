@@ -80,10 +80,6 @@
         "question": "Behöver jag vara online för att använda ReSight?",
         "answer": "Efter initial aktivering fungerar ReSight helt offline. Ingen internetanslutning krävs för daglig användning."
       },
-      "cost": {
-        "question": "Hur mycket kostar ReSight?",
-        "answer": "ReSight är ett engångsköp på 49 kr SEK. Detta inkluderar livstidsåtkomst till alla funktioner, obegränsade uppdateringar och prioriterad support. Inga prenumerationer eller dolda avgifter."
-      },
       "displaySettings": {
         "question": "Vilka skärminställningar kan jag justera med ReSight?",
         "answer": "ReSight låter dig justera ljusstyrka, kontrast och gamma i realtid med snabbtangenter. Detta är särskilt användbart för mörka kartor i spel som Hunt: Showdown eller ljusa miljöer i andra spel."
