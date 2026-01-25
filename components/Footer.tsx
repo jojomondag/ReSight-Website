@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const { data: session } = useSession();
 
   return (
     <footer className="bg-bg-secondary border-t border-border">
@@ -66,22 +68,45 @@ export default function Footer() {
               {t("account")}
             </h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/login"
-                  className="text-text-secondary hover:text-text-primary text-sm transition-colors"
-                >
-                  {t("login")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/register"
-                  className="text-text-secondary hover:text-text-primary text-sm transition-colors"
-                >
-                  {t("register")}
-                </Link>
-              </li>
+              {session ? (
+                <>
+                  <li>
+                    <Link
+                      href="/dashboard"
+                      className="text-text-secondary hover:text-text-primary text-sm transition-colors"
+                    >
+                      {t("dashboard")}
+                    </Link>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => signOut()}
+                      className="text-text-secondary hover:text-text-primary text-sm transition-colors"
+                    >
+                      {t("signOut")}
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link
+                      href="/login"
+                      className="text-text-secondary hover:text-text-primary text-sm transition-colors"
+                    >
+                      {t("login")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/register"
+                      className="text-text-secondary hover:text-text-primary text-sm transition-colors"
+                    >
+                      {t("register")}
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

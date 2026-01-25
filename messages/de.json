@@ -95,6 +95,7 @@
     "account": "Konto",
     "login": "Anmelden",
     "register": "Registrieren",
+    "signOut": "Abmelden",
     "copyright": "ReSight. Alle Rechte vorbehalten.",
     "joinDiscord": "Discord beitreten"
   },
