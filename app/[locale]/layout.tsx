@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 import AsciiTreeBackground from "@/components/AsciiTree";
+import FloatingParticles from "@/components/ui/FloatingParticles";
 import { locales, ogLocale, type Locale } from "@/lib/i18n/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -185,6 +186,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Providers>
           <NextIntlClientProvider messages={messages}>
             <AsciiTreeBackground />
+            <FloatingParticles count={15} className="text-accent/20 z-0" />
             <Header />
             <main className="flex-grow" role="main" id="main-content">
               {children}

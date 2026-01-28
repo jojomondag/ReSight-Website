@@ -75,21 +75,21 @@ body {
 @keyframes branchSway {
   0%,
   100% {
-    transform: rotate(0deg) skewX(0deg);
+    transform: rotate(0deg) skewX(0deg) translateX(0);
   }
   25% {
-    transform: rotate(0.3deg) skewX(0.5deg);
+    transform: rotate(1.5deg) skewX(0.8deg) translateX(3px);
   }
   50% {
-    transform: rotate(-0.2deg) skewX(-0.3deg);
+    transform: rotate(-1deg) skewX(-0.5deg) translateX(-2px);
   }
   75% {
-    transform: rotate(0.2deg) skewX(0.4deg);
+    transform: rotate(1deg) skewX(0.6deg) translateX(2px);
   }
 }
 
 .animate-branch-sway {
-  animation: branchSway 20s ease-in-out infinite;
+  animation: branchSway 12s ease-in-out infinite;
   will-change: transform;
 }
 

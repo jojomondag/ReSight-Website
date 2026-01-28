@@ -4,9 +4,12 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import AnimatedTabs from "@/components/ui/AnimatedTabs";
 
 const games = [
   {
+    id: "hunt",
     name: "Hunt: Showdown",
     images: {
       before: "/screenshots/hunt-dark.png",
@@ -14,6 +17,7 @@ const games = [
     },
   },
   {
+    id: "tarkov",
     name: "Escape from Tarkov",
     images: {
       before: "/screenshots/tarkov-crosshair.png",
@@ -24,7 +28,10 @@ const games = [
 
 export default function Hero() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [activeGame, setActiveGame] = useState(games[0].id);
   const t = useTranslations("hero");
+
+  const currentGame = games.find((g) => g.id === activeGame) || games[0];
 
   // Flat array of all images for navigation
   const allImages = games.flatMap((game) => [
@@ -67,6 +74,11 @@ export default function Hero() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [lightboxIndex, goToPrevious, goToNext]);
 
+  const tabs = games.map((game) => ({
+    id: game.id,
+    label: game.name,
+  }));
+
   return (
     <section
       className="relative overflow-hidden"
@@ -79,23 +91,39 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <header className="text-center">
           {/* Speakable content for voice search */}
-          <h1
+          <motion.h1
             id="hero-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6"
             data-speakable="true"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             {t("title1")}
-            <span className="block text-accent">{t("title2")}</span>
-          </h1>
-          <p
+            <motion.span
+              className="block text-accent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+              {t("title2")}
+            </motion.span>
+          </motion.h1>
+          <motion.p
             className="text-xl text-text-secondary max-w-2xl mx-auto mb-10"
             data-speakable="true"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             {t("subtitle")}
-          </p>
-          <nav
+          </motion.p>
+          <motion.nav
             className="flex flex-col sm:flex-row gap-4 justify-center"
             aria-label="Primary actions"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
             <Link
               href="/register"
@@ -111,8 +139,13 @@ export default function Hero() {
             >
               {t("viewPricing")}
             </Link>
-          </nav>
-          <div className="flex justify-center mt-4">
+          </motion.nav>
+          <motion.div
+            className="flex justify-center mt-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          >
             <a
               href="https://discord.gg/AZJ9AA9S"
               target="_blank"
@@ -130,118 +163,153 @@ export default function Hero() {
               </svg>
               <span>{t("joinDiscord")}</span>
             </a>
-          </div>
+          </motion.div>
         </header>
 
-        {/* Before/After Comparison */}
-        <div className="mt-16 max-w-5xl mx-auto">
+        {/* Before/After Comparison with Animated Tabs */}
+        <motion.div
+          className="mt-16 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        >
           <h2 className="sr-only">ReSight in action - Before and after comparison</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
-            {games.map((game) => (
-              <article key={game.name} className="space-y-3" role="listitem">
-                <div className="text-center mb-4">
-                  <span className="px-4 py-2 rounded-lg text-sm font-medium bg-bg-tertiary text-text-primary">
-                    {game.name}
-                  </span>
-                </div>
-                <button
-                  onClick={() => openLightbox(game.images.after)}
-                  className="relative rounded-lg overflow-hidden border-2 border-accent cursor-pointer hover:brightness-110 transition-all w-full"
-                  aria-label={`View ${game.name} with ReSight enhancement - click to enlarge`}
-                >
+
+          {/* Game Tabs */}
+          <div className="flex justify-center mb-8">
+            <AnimatedTabs
+              tabs={tabs}
+              defaultTab={activeGame}
+              onChange={setActiveGame}
+            />
+          </div>
+
+          {/* Game Screenshots */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeGame}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="space-y-4"
+            >
+              {/* With ReSight - Main showcase */}
+              <button
+                onClick={() => openLightbox(currentGame.images.after)}
+                className="relative rounded-xl overflow-hidden border-2 border-accent cursor-pointer hover:border-accent-light transition-all w-full group"
+                aria-label={`View ${currentGame.name} with ReSight enhancement - click to enlarge`}
+              >
+                <div className="relative">
                   <Image
-                    src={game.images.after}
-                    alt={`${game.name} gameplay with ReSight crosshair overlay and display adjustments applied`}
-                    width={800}
-                    height={450}
-                    className="w-full h-auto"
+                    src={currentGame.images.after}
+                    alt={`${currentGame.name} gameplay with ReSight crosshair overlay and display adjustments applied`}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
                     priority
                   />
-                  <span className="absolute top-3 left-3 bg-accent/90 text-bg-primary text-xs px-2 py-1 rounded font-medium">
-                    {t("withReSight")}
-                  </span>
-                </button>
-                <button
-                  onClick={() => openLightbox(game.images.before)}
-                  className="relative rounded-lg overflow-hidden border-2 border-border cursor-pointer hover:brightness-110 transition-all w-full"
-                  aria-label={`View ${game.name} without ReSight - click to enlarge`}
-                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <span className="absolute top-4 left-4 bg-accent text-bg-primary text-sm px-3 py-1.5 rounded-lg font-medium shadow-lg">
+                  {t("withReSight")}
+                </span>
+              </button>
+
+              {/* Before - Smaller comparison */}
+              <button
+                onClick={() => openLightbox(currentGame.images.before)}
+                className="relative rounded-xl overflow-hidden border-2 border-border cursor-pointer hover:border-text-secondary transition-all w-full group"
+                aria-label={`View ${currentGame.name} without ReSight - click to enlarge`}
+              >
+                <div className="relative">
                   <Image
-                    src={game.images.before}
-                    alt={`${game.name} gameplay without ReSight - showing difficulty seeing in dark areas`}
-                    width={800}
-                    height={450}
-                    className="w-full h-auto"
+                    src={currentGame.images.before}
+                    alt={`${currentGame.name} gameplay without ReSight - showing difficulty seeing in dark areas`}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-bg-primary/80 text-text-secondary text-xs px-2 py-1 rounded">
-                    {t("before")}
-                  </span>
-                </button>
-              </article>
-            ))}
-          </div>
-        </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <span className="absolute top-4 left-4 bg-bg-primary/90 text-text-secondary text-sm px-3 py-1.5 rounded-lg border border-border">
+                  {t("before")}
+                </span>
+              </button>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       {/* Lightbox Overlay */}
-      {lightboxIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer animate-fade-in"
-          onClick={closeLightbox}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image lightbox"
-        >
-          {/* Close button */}
-          <button
-            className="absolute top-4 right-4 text-white/80 hover:text-white text-4xl font-light transition-colors z-10"
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer"
             onClick={closeLightbox}
-            aria-label="Close lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Image lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            &times;
-          </button>
+            {/* Close button */}
+            <button
+              className="absolute top-4 right-4 text-white/80 hover:text-white text-4xl font-light transition-colors z-10"
+              onClick={closeLightbox}
+              aria-label="Close lightbox"
+            >
+              &times;
+            </button>
 
-          {/* Image with navigation */}
-          <div
-            className="relative flex flex-col items-center gap-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative">
-              <Image
-                src={allImages[lightboxIndex].src}
-                alt={allImages[lightboxIndex].label}
-                width={1920}
-                height={1080}
-                className="max-w-full max-h-[80vh] object-contain rounded-lg cursor-default"
-              />
-              {/* Previous arrow */}
-              <button
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors p-2 hover:bg-white/10 rounded-full"
-                onClick={goToPrevious}
-                aria-label="Previous image"
-              >
-                &lsaquo;
-              </button>
-              {/* Next arrow */}
-              <button
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors p-2 hover:bg-white/10 rounded-full"
-                onClick={goToNext}
-                aria-label="Next image"
-              >
-                &rsaquo;
-              </button>
+            {/* Image with navigation */}
+            <motion.div
+              className="relative flex flex-col items-center gap-4"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="relative">
+                <Image
+                  src={allImages[lightboxIndex].src}
+                  alt={allImages[lightboxIndex].label}
+                  width={1920}
+                  height={1080}
+                  className="max-w-full max-h-[80vh] object-contain rounded-lg cursor-default"
+                />
+                {/* Previous arrow */}
+                <button
+                  className="absolute left-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors p-2 hover:bg-white/10 rounded-full"
+                  onClick={goToPrevious}
+                  aria-label="Previous image"
+                >
+                  &lsaquo;
+                </button>
+                {/* Next arrow */}
+                <button
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors p-2 hover:bg-white/10 rounded-full"
+                  onClick={goToNext}
+                  aria-label="Next image"
+                >
+                  &rsaquo;
+                </button>
+              </div>
+              <span className="text-white/80 text-sm">
+                {allImages[lightboxIndex].label}
+              </span>
+            </motion.div>
+
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+              {lightboxIndex + 1} / {allImages.length}
             </div>
-            <span className="text-white/80 text-sm">
-              {allImages[lightboxIndex].label}
-            </span>
-          </div>
-
-          {/* Image counter */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
-            {lightboxIndex + 1} / {allImages.length}
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
