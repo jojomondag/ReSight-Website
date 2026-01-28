@@ -63,7 +63,7 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             {session ? (
               <>
                 <span className="text-sm text-text-secondary hidden sm:block">
@@ -71,7 +71,7 @@ export default function Header() {
                 </span>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+                  className="text-xs sm:text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
                 >
                   {t("signOut")}
                 </button>
@@ -80,16 +80,19 @@ export default function Header() {
               <>
                 <Link
                   href="/login"
-                  className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+                  className="text-xs sm:text-sm font-medium text-text-secondary hover:text-text-primary transition-colors whitespace-nowrap"
                 >
                   {t("login")}
                 </Link>
-                <Link href="/register" className="btn-primary text-sm">
+                <Link
+                  href="/register"
+                  className="bg-accent text-bg-primary font-semibold px-3 py-1.5 sm:px-6 sm:py-3 rounded-lg hover:bg-accent-light transition-colors text-xs sm:text-sm whitespace-nowrap"
+                >
                   {t("getStarted")}
                 </Link>
               </>
             )}
-            <div className="border-l border-border pl-4 ml-2">
+            <div className="border-l border-border pl-2 sm:pl-4 ml-1 sm:ml-2">
               <LocaleSwitcher />
             </div>
           </div>
