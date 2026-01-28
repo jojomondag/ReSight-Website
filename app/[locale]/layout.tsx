@@ -8,6 +8,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+import AsciiTreeBackground from "@/components/AsciiTree";
 import { locales, ogLocale, type Locale } from "@/lib/i18n/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -183,6 +184,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Providers>
           <NextIntlClientProvider messages={messages}>
+            <AsciiTreeBackground />
             <Header />
             <main className="flex-grow" role="main" id="main-content">
               {children}
