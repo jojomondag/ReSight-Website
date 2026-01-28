@@ -72,8 +72,30 @@ body {
   will-change: transform;
 }
 
+@keyframes branchSway {
+  0%,
+  100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  25% {
+    transform: rotate(0.3deg) skewX(0.5deg);
+  }
+  50% {
+    transform: rotate(-0.2deg) skewX(-0.3deg);
+  }
+  75% {
+    transform: rotate(0.2deg) skewX(0.4deg);
+  }
+}
+
+.animate-branch-sway {
+  animation: branchSway 20s ease-in-out infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-sway {
+  .animate-sway,
+  .animate-branch-sway {
     animation: none;
   }
 }
