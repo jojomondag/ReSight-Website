@@ -29,9 +29,33 @@ const games = [
 export default function Hero() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeGame, setActiveGame] = useState(games[0].id);
+  const [isPaused, setIsPaused] = useState(false);
   const t = useTranslations("hero");
 
   const currentGame = games.find((g) => g.id === activeGame) || games[0];
+
+  // Auto-rotate games every 5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveGame((current) => {
+        const currentIndex = games.findIndex((g) => g.id === current);
+        const nextIndex = (currentIndex + 1) % games.length;
+        return games[nextIndex].id;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  // Pause auto-rotation when user manually selects a tab
+  const handleTabChange = (tabId: string) => {
+    setActiveGame(tabId);
+    setIsPaused(true);
+    // Resume auto-rotation after 10 seconds of inactivity
+    setTimeout(() => setIsPaused(false), 10000);
+  };
 
   // Flat array of all images for navigation
   const allImages = games.flatMap((game) => [
@@ -179,8 +203,8 @@ export default function Hero() {
           <div className="flex justify-center mb-8">
             <AnimatedTabs
               tabs={tabs}
-              defaultTab={activeGame}
-              onChange={setActiveGame}
+              activeTab={activeGame}
+              onChange={handleTabChange}
             />
           </div>
 

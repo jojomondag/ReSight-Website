@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Tab {
@@ -10,21 +9,18 @@ interface Tab {
 
 interface AnimatedTabsProps {
   tabs: Tab[];
-  defaultTab?: string;
+  activeTab: string;
   onChange?: (tabId: string) => void;
   className?: string;
 }
 
 export default function AnimatedTabs({
   tabs,
-  defaultTab,
+  activeTab,
   onChange,
   className = "",
 }: AnimatedTabsProps) {
-  const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]?.id);
-
   const handleTabClick = (tabId: string) => {
-    setActiveTab(tabId);
     onChange?.(tabId);
   };
 

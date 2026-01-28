@@ -1,13 +1,15 @@
 "use client";
 
-const treeArt = `
-                                        ~~~ ~~~ ~~~
+// Top clouds - static
+const topClouds = `                                        ~~~ ~~~ ~~~
                                     ~~~ ~~~ ~~~ ~~~ ~~~
                                   ~~~ ~~~ ~~~ ~~~ ~~~ ~~~
                                 ~~~ ~~~ ~~~ ~~~ ~~~ ~~~ ~~~
                                   ~~~ ~~~ ~~~ ~~~ ~~~ ~~~
-                                    ~~~ ~~~ ~~~ ~~~ ~~~
-                                                 .
+                                    ~~~ ~~~ ~~~ ~~~ ~~~`;
+
+// Branches and foliage - animated sway
+const branches = `                                                 .
                                               .         ;
                  .              .              ;%     ;;
                    ,           ,                :;%  %;
@@ -22,8 +24,10 @@ const treeArt = `
                       \`@%:.  :;%.         ;@@%;'
                         \`@%.  \`;@%.      ;@@%;
                           \`@%%. \`@%%    ;@@%;
-                            ;@%. :@%%  %@@%;
-                              %@bd%%%bd%%:;
+                            ;@%. :@%%  %@@%;`;
+
+// Trunk base - static
+const trunkBase = `                              %@bd%%%bd%%:;
                                 #@%%%%%:;;
                                 %@@%%%::;
                                 %@@@%(o);  . '
@@ -34,14 +38,20 @@ const treeArt = `
                                .%@@@@%::;
                                ;%@@@@%::;.
                               ;%@@@@%%:;;;.
-                          ...;%@@@@@%%:;;;;,..
+                          ...;%@@@@@%%:;;;;,..`;
 
+// Bottom puddles - static
+const bottomPuddles = `
               ~~~ ~~~ ~~~                         ~~~ ~~~ ~~~
            ~~~ ~~~ ~~~ ~~~                     ~~~ ~~~ ~~~ ~~~
          ~~~ ~~~ ~~~ ~~~ ~~~                 ~~~ ~~~ ~~~ ~~~ ~~~
            ~~~ ~~~ ~~~ ~~~                     ~~~ ~~~ ~~~ ~~~
-              ~~~ ~~~ ~~~                         ~~~ ~~~ ~~~
-`;
+              ~~~ ~~~ ~~~                         ~~~ ~~~ ~~~`;
+
+const fontStyle = {
+  fontFamily:
+    'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace',
+};
 
 export default function AsciiTreeBackground() {
   return (
@@ -49,15 +59,39 @@ export default function AsciiTreeBackground() {
       className="fixed inset-y-0 left-0 w-1/3 pointer-events-none hidden md:flex items-center justify-center overflow-hidden z-0 will-change-transform -translate-x-[150px]"
       aria-hidden="true"
     >
-      <pre
-        className="font-mono text-accent/25 text-[12px] leading-[1.1] whitespace-pre select-none animate-branch-sway origin-bottom"
-        style={{
-          fontFamily:
-            'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace',
-        }}
-      >
-        {treeArt}
-      </pre>
+      <div className="flex flex-col">
+        {/* Top clouds - static */}
+        <pre
+          className="font-mono text-accent/25 text-[12px] leading-[1.1] whitespace-pre select-none"
+          style={fontStyle}
+        >
+          {topClouds}
+        </pre>
+
+        {/* Branches - animated sway from bottom */}
+        <pre
+          className="font-mono text-accent/25 text-[12px] leading-[1.1] whitespace-pre select-none animate-branch-sway origin-bottom"
+          style={fontStyle}
+        >
+          {branches}
+        </pre>
+
+        {/* Trunk base - static */}
+        <pre
+          className="font-mono text-accent/25 text-[12px] leading-[1.1] whitespace-pre select-none"
+          style={fontStyle}
+        >
+          {trunkBase}
+        </pre>
+
+        {/* Bottom puddles - static */}
+        <pre
+          className="font-mono text-accent/25 text-[12px] leading-[1.1] whitespace-pre select-none"
+          style={fontStyle}
+        >
+          {bottomPuddles}
+        </pre>
+      </div>
     </div>
   );
 }
