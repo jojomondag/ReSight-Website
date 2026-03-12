@@ -116,7 +116,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {t("copyright")}
           </p>
           <a
-            href="https://discord.gg/AZJ9AA9S"
+            href="https://discord.gg/RY2fmWn2qP"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-text-secondary hover:text-[#5865F2] transition-colors"

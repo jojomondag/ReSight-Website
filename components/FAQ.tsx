@@ -8,7 +8,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const t = useTranslations("faq");
   const tFooter = useTranslations("footer");
-  const discordUrl = "https://discord.gg/AZJ9AA9S";
+  const discordUrl = "https://discord.gg/RY2fmWn2qP";
 
   const faqKeys = [
     "games",

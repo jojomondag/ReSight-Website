@@ -171,7 +171,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
             <a
-              href="https://discord.gg/AZJ9AA9S"
+              href="https://discord.gg/RY2fmWn2qP"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-lg px-8 py-4 flex items-center gap-2 hover:text-accent transition-colors"
