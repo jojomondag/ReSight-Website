@@ -21,30 +21,48 @@ function SuccessPageContent() {
 
   useEffect(() => {
     if (sessionId) {
-      fetchLicenseData();
+      fetchLicenseWithRetry();
     } else {
       setIsLoading(false);
     }
   }, [sessionId]);
 
-  const fetchLicenseData = async () => {
-    try {
-      const response = await fetch(`/api/license?session_id=${sessionId}`);
-      const data = await response.json();
+  const fetchLicenseWithRetry = async () => {
+    const maxAttempts = 10;
+    const delayMs = 2000;
 
-      if (response.ok && data.license) {
-        setLicenseData({
-          licenseKey: data.license.licenseKey,
-          email: data.license.email,
-        });
-      } else {
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        const response = await fetch(`/api/license?session_id=${sessionId}`);
+        const data = await response.json();
+
+        if (response.ok && data.license) {
+          setLicenseData({
+            licenseKey: data.license.licenseKey,
+            email: data.license.email,
+          });
+          setIsLoading(false);
+          return;
+        }
+
+        // If 404 and not last attempt, wait and retry (webhook may not have fired yet)
+        if (response.status === 404 && attempt < maxAttempts) {
+          await new Promise((resolve) => setTimeout(resolve, delayMs));
+          continue;
+        }
+
+        // Last attempt or non-404 error
         setError(data.error || "Failed to retrieve license");
+      } catch {
+        if (attempt === maxAttempts) {
+          setError("Failed to retrieve license details");
+        } else {
+          await new Promise((resolve) => setTimeout(resolve, delayMs));
+          continue;
+        }
       }
-    } catch {
-      setError("Failed to retrieve license details");
-    } finally {
-      setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   const copyToClipboard = async () => {

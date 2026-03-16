@@ -38,6 +38,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  console.log(`Stripe webhook received: ${event.type}`);
+
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
 
@@ -45,6 +47,12 @@ export async function POST(request: NextRequest) {
       await handleCheckoutCompleted(session);
     } catch (error) {
       console.error("Error handling checkout.session.completed:", error);
+      console.error("Session data:", JSON.stringify({
+        id: session.id,
+        customer_email: session.customer_email,
+        payment_intent: session.payment_intent,
+        amount_total: session.amount_total,
+      }));
       return NextResponse.json(
         { error: "Failed to process checkout" },
         { status: 500 }
