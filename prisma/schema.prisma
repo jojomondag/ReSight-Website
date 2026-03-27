@@ -15,6 +15,7 @@ model User {
   createdAt     DateTime  @default(now())
   licenses      License[]
   purchases     Purchase[]
+  isAdmin       Boolean   @default(false)
 }
 
 model License {
