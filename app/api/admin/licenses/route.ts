@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { generateLicenseKey } from "@/lib/license";
+
 import { z } from "zod";
+import { sendLicenseEmail } from "@/lib/email";
 
 function isAuthorized(request: NextRequest): boolean {
   const apiKey = request.headers.get("x-api-key");
@@ -98,6 +100,13 @@ export async function POST(request: NextRequest) {
         },
       },
     });
+
+    // Skicka licensnyckel via e-post
+    try {
+      await sendLicenseEmail(user.email, licenseKey);
+    } catch (mailError) {
+      console.error("Kunde inte skicka licensmail:", mailError);
+    }
 
     return NextResponse.json({
       success: true,
